@@ -25,22 +25,21 @@ void print(Node *head)
     cout << endl;
 }
 
-Node* recur_reverse(Node* head){
-    //Base Case
-    if(head == NULL || head->next == NULL ){
+Node *recur_reverse(Node *head)
+{
+    // Base Case
+    if (head == NULL || head->next == NULL)
+    {
         return head;
     }
 
-    // general case 
-    Node * newhead = recur_reverse(head->next);
+    // general case
+    Node *newhead = recur_reverse(head->next);
     head->next->next = head;
     head->next = NULL;
 
     return newhead;
-
 }
-
-
 
 int main()
 {
@@ -59,7 +58,6 @@ int main()
     print(head);
     head = recur_reverse(head);
     print(head);
-
 
     return 0;
 }
