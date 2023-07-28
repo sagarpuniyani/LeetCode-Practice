@@ -28,10 +28,10 @@ bool hasCircular(Node *head){
 
     if(temp == NULL )
     { 
-        return true;
+        return false;
     }
     
-    return false;
+    return true;
 }
 
 // To Traverse the linklist
@@ -49,8 +49,7 @@ int main()
 {
 
     // initalising the link list
-    Node *head = new Node(3);
-    Node *a = head;
+    Node *a = new Node(3);
     Node *b = new Node(5);
     Node *c = new Node(7);
     Node *d = new Node(9);
@@ -61,7 +60,7 @@ int main()
     d->next = a;
 
     
-    bool hc = hasCircular(head);
+    bool hc = hasCircular(a);
     cout << "Is the linked list has Cycle : "<< hc << endl;
 
     return 0;

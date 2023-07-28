@@ -28,40 +28,48 @@ void print(Node *head)
     cout << endl;
 }
 
-bool has_nodes(Node* head , int k ){
-    Node* temp = head;
-    if (temp == NULL){
+bool has_nodes(Node *head, int k)
+{
+    Node *temp = head;
+    if (temp == NULL)
+    {
         return false;
     }
 
-    while(k){
-        if(temp != NULL){
+    while (k)
+    {
+        if (temp != NULL)
+        {
             temp = temp->next;
             k--;
         }
-        else {
+        else
+        {
             return false;
         }
     }
     return true;
 }
 
-Node* k_reverse(Node* head , int k ){
+Node *k_reverse(Node *head, int k)
+{
 
-    // Trivial case 
-    if(head == NULL){
+    // Trivial case
+    if (head == NULL)
+    {
         return NULL;
     }
 
-    // Reversing the first K-group of nodes 
-    Node* curr = head;
-    Node* forw = NULL;
-    Node* prev = NULL;
-    int cnt = 0; 
+    // Reversing the first K-group of nodes
+    Node *curr = head;
+    Node *forw = NULL;
+    Node *prev = NULL;
+    int cnt = 0;
 
-
-    if(has_nodes(curr , k )){
-        while(cnt < k && curr!= NULL){
+    if (has_nodes(curr, k))
+    {
+        while (cnt < k && curr != NULL)
+        {
             forw = curr->next;
             curr->next = prev;
             prev = curr;
@@ -69,15 +77,15 @@ Node* k_reverse(Node* head , int k ){
             cnt++;
         }
 
-        head->next = k_reverse(curr , k);
+        head->next = k_reverse(curr, k);
     }
 
-    else{
+    else
+    {
         return curr;
     }
 
     return prev;
-
 }
 int main()
 {
@@ -94,15 +102,16 @@ int main()
     e->next = NULL;
 
     print(a);
-    bool t = has_nodes(d , 3);
-    cout<< " Node of the d is : "<<t<<endl;
+    bool t = has_nodes(d, 3);
+    cout << " Node of the d is : " << t << endl;
 
     int i = 3;
 
-    Node* k = k_reverse(a,3);
+    Node *k = k_reverse(a, 3);
     print(k);
-    while(i){
-        cout<<" I am indian "<<endl;
+    while (i)
+    {
+        cout << " I am indian " << endl;
         --i;
     }
 
