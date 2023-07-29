@@ -111,8 +111,8 @@ int main()
 
     bool t = hascycle(a);
     cout<< " Is  Linked List has Cycle  : "<< t << endl;
-    // bool w = has_Cycle(a);
-    // cout<< " Is  Linked List has Cycle  : "<< w << endl;
+    bool w = has_Cycle(a);
+    cout<< " Is  Linked List has Cycle  : "<< w << endl;
     
     return 0;
 }
