@@ -37,9 +37,10 @@ bool hascycle(Node* head){
 
     while(fast != NULL   ){
         fast = fast->next ;
-        if(fast != NULL){
-            fast = fast->next;
+        if(fast == NULL){
+            return false;
         }
+        fast = fast->next;
         slow =  slow->next;
         cout << slow->data<< endl;
     }
@@ -71,6 +72,16 @@ bool has_Cycle(Node *head) {
     }
 
 
+    bool y()
+    {
+        if(NULL == NULL){
+            return  true ;
+        }
+
+        return false;
+    }
+
+
 int main()
 {
 
@@ -84,7 +95,7 @@ int main()
     Node *g = new Node(12);
     Node *h = new Node(15);
 
-    a->next = b;
+    a->next = NULL;
     b->next = c;
     c->next = d;
     d->next = e;
@@ -94,6 +105,9 @@ int main()
     h->next = c;
 
     cout<< " a->data = "<<a->data;
+
+    bool tell = y();
+    cout << " yes = "<< tell << endl;
 
     bool t = hascycle(a);
     cout<< " Is  Linked List has Cycle  : "<< t << endl;
