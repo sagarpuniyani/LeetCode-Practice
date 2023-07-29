@@ -24,63 +24,76 @@ void print(Node *head)
     cout << endl;
 }
 
-bool hascycle(Node* head){
+bool hascycle(Node *head)
+{
 
-    // critical case 
-    if (head == NULL){
-        cout <<"head->data" << head->data;
-        return false ;
+    // critical case
+    if (head == NULL)
+    {
+        cout << "head->data" << head->data;
+        return false;
     }
 
-    Node* fast = head;
-    Node* slow = head;
+    Node *fast = head;
+    Node *slow = head;
 
-    while(fast != NULL   ){
-        fast = fast->next ;
-        if(fast == NULL){
+    while (fast != NULL)
+    {
+        fast = fast->next;
+        if (fast == NULL)
+        {
             return false;
         }
         fast = fast->next;
-        slow =  slow->next;
-        cout << slow->data<< endl;
+        slow = slow->next;
+        cout << slow->data << endl;
     }
 
-    if(fast == slow ){
+    if (fast == slow)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
 
-// Another Approach 
-bool has_Cycle(Node *head) {
-        if (head==nullptr){
-        cout <<"head->data" << head->data;
-            return false;
-        }
-        if (head->next != nullptr){
-            if (head->next->data == 1e5+1){
-                return true;
-            } else {
-                head->next->data = 1e5+1;
-                return has_Cycle(head->next);
-            }
-        } else {
-            return false;
-        }
-    }
-
-
-    bool y()
+// Another Approach
+bool has_Cycle(Node *head)
+{
+    if (head == nullptr)
     {
-        if(NULL == NULL){
-            return  true ;
-        }
-
+        cout << "head->data" << head->data;
         return false;
     }
+    if (head->next != nullptr)
+    {
+        if (head->next->data == 1e5 + 1)
+        {
+            return true;
+        }
+        else
+        {
+            head->next->data = 1e5 + 1;
+            return has_Cycle(head->next);
+        }
+    }
+    else
+    {
+        return false;
+    }
+}
 
+bool y()
+{
+    if (NULL == NULL)
+    {
+        return true;
+    }
+
+    return false;
+}
 
 int main()
 {
@@ -104,15 +117,15 @@ int main()
     g->next = h;
     h->next = c;
 
-    cout<< " a->data = "<<a->data;
+    cout << " a->data = " << a->data;
 
     bool tell = y();
-    cout << " yes = "<< tell << endl;
+    cout << " yes = " << tell << endl;
 
     bool t = hascycle(a);
-    cout<< " Is  Linked List has Cycle  : "<< t << endl;
+    cout << " Is  Linked List has Cycle  : " << t << endl;
     bool w = has_Cycle(a);
-    cout<< " Is  Linked List has Cycle  : "<< w << endl;
-    
+    cout << " Is  Linked List has Cycle  : " << w << endl;
+
     return 0;
 }
