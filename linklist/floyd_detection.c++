@@ -28,13 +28,14 @@ bool hascycle(Node* head){
 
     // critical case 
     if (head == NULL){
+        cout <<"head->data" << head->data;
         return false ;
     }
 
     Node* fast = head;
     Node* slow = head;
 
-    while(fast == NULL   ){
+    while(fast != NULL   ){
         fast = fast->next ;
         if(fast != NULL){
             fast = fast->next;
@@ -54,6 +55,7 @@ bool hascycle(Node* head){
 // Another Approach 
 bool has_Cycle(Node *head) {
         if (head==nullptr){
+        cout <<"head->data" << head->data;
             return false;
         }
         if (head->next != nullptr){
@@ -91,10 +93,12 @@ int main()
     g->next = h;
     h->next = c;
 
+    cout<< " a->data = "<<a->data;
+
     bool t = hascycle(a);
     cout<< " Is  Linked List has Cycle  : "<< t << endl;
-    bool w = has_Cycle(a);
-    cout<< " Is  Linked List has Cycle  : "<< w << endl;
+    // bool w = has_Cycle(a);
+    // cout<< " Is  Linked List has Cycle  : "<< w << endl;
     
     return 0;
 }
