@@ -27,36 +27,29 @@ void print(Node *head)
 bool hascycle(Node *head)
 {
 
-    // critical case
-    if (head == NULL)
-    {
-        cout << "head->data" << head->data;
-        return false;
+    // critical case 
+    if (head == NULL  || head->next == NULL){
+        return false ;
     }
 
-    Node *fast = head;
-    Node *slow = head;
+    Node* fast = head;
+    Node* slow = head;
 
-    while (fast != NULL)
-    {
-        fast = fast->next;
-        if (fast == NULL)
-        {
-            return false;
+    while(fast != NULL && slow != NULL ){
+        fast = fast->next ;
+        if(fast != NULL){
+            fast = fast->next;
         }
-        fast = fast->next;
-        slow = slow->next;
-        cout << slow->data << endl;
-    }
+        slow =  slow->next;
 
-    if (fast == slow)
-    {
+    if(fast == slow ){
         return true;
     }
-    else
-    {
-        return false;
     }
+
+    
+        return false;
+       
 }
 
 // Another Approach
@@ -108,7 +101,7 @@ int main()
     Node *g = new Node(12);
     Node *h = new Node(15);
 
-    a->next = NULL;
+    a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
@@ -117,10 +110,10 @@ int main()
     g->next = h;
     h->next = c;
 
-    cout << " a->data = " << a->data;
+    // cout << " a->data = " << a->data;
 
-    bool tell = y();
-    cout << " yes = " << tell << endl;
+    // bool tell = y();
+    // cout << " yes = " << tell << endl;
 
     bool t = hascycle(a);
     cout << " Is  Linked List has Cycle  : " << t << endl;
