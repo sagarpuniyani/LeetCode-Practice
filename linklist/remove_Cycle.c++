@@ -67,6 +67,23 @@ Node* getStartnode_loop(Node* head){
 
 }
 
+// removal of the loop from the cycle detected in the linkedlist 
+
+void remove_loop(Node* head ){
+
+    if ( head == nullptr){
+        return;
+    }
+
+    Node*  start = getStartnode_loop(head);
+    Node* temp = start->next;
+
+    while(temp->next != start ){
+        temp  =  temp->next;
+    }
+    temp->next = NULL;
+}
+
 int main()
 {
 
@@ -91,6 +108,8 @@ int main()
     
     Node* n = getStartnode_loop(a);
     cout << " Starting  at "<< n->data << endl;
+    remove_loop(a);
+    print(a);
 
     return 0;
 }
