@@ -104,7 +104,7 @@ int main()
     e->next = f;
     f->next = g;
     g->next = h;
-    h->next = c;
+    h->next = a;
     
     Node* n = getStartnode_loop(a);
     cout << " Starting  at "<< n->data << endl;
