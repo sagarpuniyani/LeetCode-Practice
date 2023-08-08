@@ -49,7 +49,6 @@ bool hascycle(Node *head)
 
     
         return false;
-       
 }
 
 // Another Approach
