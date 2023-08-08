@@ -54,6 +54,14 @@ Node* reverse(Node* head){
 
 }
 
+bool check_Has_k(Node* head , int k ){
+    // Base Case 
+    if(head == NULL){
+        return false;
+    }
+
+}
+
 Node* Reversing(Node* head){
 
     // Base Case 
@@ -63,16 +71,15 @@ Node* Reversing(Node* head){
     Node* forw  = NULL;
     Node* prev  = NULL;
     Node* curr  = head;
-
+    
     while (curr != NULL){
         forw = curr->next;
         curr->next = prev;
         prev = curr;
         curr = forw;
     }
-    {
-        /* code */
-    }
+
+    return prev;
     
 }
 
@@ -98,6 +105,9 @@ int main()
     Node* head = reverse(a);
     print(head);
 
+    cout<<"Reversing "<<endl;
+    Node* r = Reversing(head);
+    print(r);
 
     return 0;
 }
