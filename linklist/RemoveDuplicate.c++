@@ -45,9 +45,30 @@ Node *deleteDuplicates(Node *head)
     if(head == NULL){
         return head ;
     }
+    auto curr = head;
 
     // Genearal Case 
-    
+    while(curr != NULL ){
+
+        // Check the Data value 
+        // 1. If the data is equal
+        if(curr->data == curr->next->data){
+            curr = curr->next;
+        }
+
+        // If the Data is Not equal 
+        else {
+            auto Node_to_Delete = curr->next;
+            auto Curr_To_Locate = curr->next->next;
+
+            delete Node_to_Delete ; 
+            curr = Curr_To_Locate;
+        }
+
+        return  head;
+
+
+    }
 }
 
 int main()
@@ -66,6 +87,15 @@ int main()
     d->next = e;
     e->next = f;
     f->next = NULL;
+
+    // Printing the linked list 
+    print(a);
+
+    // Calling the Duplicate Remover Function 
+    // Node* new_head  = deleteDuplicates(a);
+
+    // cout<< "After the Removal of the Duplicates "<<endl;
+    // print(new_head);
 
     return 0;
 }
