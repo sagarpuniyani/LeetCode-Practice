@@ -54,11 +54,26 @@ Node* reverse(Node* head){
 
 }
 
-bool check_Has_k(Node* head , int k ){
+
+
+//  To check that Has the enogh Node is present or not 
+
+bool has_k_Node(Node* head , int k ){
+
     // Base Case 
     if(head == NULL){
         return false;
     }
+
+    // General Case 
+
+
+
+
+}
+
+
+Node* K_reverse(Node* head){
 
 }
 
