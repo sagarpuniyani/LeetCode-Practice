@@ -33,9 +33,7 @@ void print(Node* head){
     cout<<endl;
 }
 
-bool check_has_Node(Node* head , int k){
-    
-}
+
 
 
 Node* reverse(Node* head){
