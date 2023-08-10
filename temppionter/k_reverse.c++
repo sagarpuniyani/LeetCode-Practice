@@ -66,7 +66,16 @@ bool has_k_Node(Node* head , int k ){
     }
 
     // General Case 
+    auto temp = head;
 
+    while((k-1)){
+
+        if(temp == NULL){
+            return false;
+        }
+        temp = temp->next;
+        k--;
+    }
 
 
 
