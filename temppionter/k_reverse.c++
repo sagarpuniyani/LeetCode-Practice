@@ -77,12 +77,17 @@ bool has_k_Node(Node* head , int k ){
         k--;
     }
 
-
+    return true ;
 
 }
 
 
-Node* K_reverse(Node* head){
+Node* K_reverse(Node* head , int k ){
+
+    // The Base Case 
+    if(head == NULL  || head->next == NULL){
+        return head;
+    }
 
 }
 
@@ -132,6 +137,9 @@ int main()
     cout<<"Reversing "<<endl;
     Node* r = Reversing(head);
     print(r);
+
+    bool tell = has_k_Node(r , 6);
+    cout << "The Node are Prensent : "<< tell << endl;
 
     return 0;
 }
