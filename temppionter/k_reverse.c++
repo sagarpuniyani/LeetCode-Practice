@@ -92,7 +92,7 @@ Node* K_reverse(Node* head , int k ){
     // Firstly Check the enough Node are Present or NOT 
     bool CanKrevere = has_k_Node(head , k);
 
-    auto curr = head ;
+    auto  curr = head ;
     Node* forw = NULL;
     Node* prev = NULL;
     int cnt = 0;
@@ -172,7 +172,7 @@ int main()
     // bool tell = has_k_Node(r , 6);
     // cout << "The Node are Present : "<< tell << endl;
 
-    Node* K_Reverse = K_reverse(b , 3 );
+    Node* K_Reverse = K_reverse(a , 4 );
     cout << "K Reversing the Data : "<< endl;
     print(K_Reverse);
 
