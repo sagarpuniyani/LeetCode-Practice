@@ -38,7 +38,7 @@ void print(Node *head)
 delete all duplicates such that each element appears only once.
 Return the linked list sorted as well.*/
 
-Node *deleteDuplicates(Node *head)
+Node *deleteDuplicates(Node* head)
 {
 
     // Base Case 
@@ -48,27 +48,17 @@ Node *deleteDuplicates(Node *head)
     auto curr = head;
 
     // Genearal Case 
-    while(curr != NULL ){
+    while(curr == NULL){
 
-        // Check the Data value 
-        // 1. If the data is equal
-        if(curr->data == curr->next->data){
+        // 1. If the consicutive data are not Equal , or 
+        // 2. curr is at the Last Node than , Make The Step ahead 
+
+        if((curr->next == NULL) || (curr->data != curr->next->data) ){
             curr = curr->next;
         }
-
-        // If the Data is Not equal 
-        else {
-            auto Node_to_Delete = curr->next;
-            auto Curr_To_Locate = curr->next->next;
-
-            delete Node_to_Delete ; 
-            curr = Curr_To_Locate;
-        }
+    }
 
         return  head;
-
-
-    }
 }
 
 int main()
@@ -92,10 +82,10 @@ int main()
     print(a);
 
     // Calling the Duplicate Remover Function 
-    // Node* new_head  = deleteDuplicates(a);
+    Node* new_head  = deleteDuplicates(a);
 
     // cout<< "After the Removal of the Duplicates "<<endl;
-    // print(new_head);
+    print(new_head);
 
     return 0;
 }
