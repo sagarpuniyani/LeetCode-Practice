@@ -49,7 +49,7 @@ Node *deleteDuplicates(Node* head)
     auto curr = head;
 
     // Genearal Case 
-    while(curr != NULL){
+    while(curr->next != NULL){
         cout<< "Enter "<< endl;
         
 
@@ -80,7 +80,7 @@ Node *deleteDuplicates(Node* head)
 
         cout << "Time to Return "<< endl;
 
-        return  curr;
+        return  head;
 }
 
 int main()
