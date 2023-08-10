@@ -38,8 +38,7 @@ void print(Node *head)
 delete all duplicates such that each element appears only once.
 Return the linked list sorted as well.*/
 
-Node *deleteDuplicates(Node* head)
-{
+Node *deleteDuplicates(Node* head){
 
     // Base Case 
     if(head == NULL){
@@ -64,9 +63,6 @@ Node *deleteDuplicates(Node* head)
             print(head);
         }
 
-        else if(curr->next == NULL){
-            curr = NULL;
-        }
 
         //  In the Case of data is Equal Then , 
         else  {
