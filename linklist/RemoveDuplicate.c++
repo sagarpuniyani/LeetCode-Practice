@@ -40,6 +40,14 @@ Return the linked list sorted as well.*/
 
 Node *deleteDuplicates(Node *head)
 {
+
+    // Base Case 
+    if(head == NULL){
+        return head ;
+    }
+
+    // Genearal Case 
+    
 }
 
 int main()
