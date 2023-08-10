@@ -25,7 +25,7 @@ public:
 
 void print(Node *head)
 {
-    auto temp = head;
+    Node* temp = head;
     while (temp != NULL)
     {
         cout << " " << temp->data;
@@ -43,22 +43,44 @@ Node *deleteDuplicates(Node* head)
 
     // Base Case 
     if(head == NULL){
-        return head ;
+        return NULL ;
     }
+
     auto curr = head;
 
     // Genearal Case 
-    while(curr == NULL){
+    while(curr != NULL){
+        cout<< "Enter "<< endl;
+        
 
-        // 1. If the consicutive data are not Equal , or 
-        // 2. curr is at the Last Node than , Make The Step ahead 
+        if((curr->data == curr->next->data) && (curr->next != NULL)){
+            cout << "Data   Same "; 
+            cout << "curr->data = " << curr->data<<endl;
+            Node*  NodeToDelete = curr->next;
+            Node* CurrToLocate = curr->next->next;
 
-        if((curr->next == NULL) || (curr->data != curr->next->data) ){
-            curr = curr->next;
+            delete (NodeToDelete);
+            curr->next = CurrToLocate;
+            print(head);
         }
+
+        else if(curr->next == NULL){
+            curr = NULL;
+        }
+
+        //  In the Case of data is Equal Then , 
+        else  {
+            cout << "Data NOT  Same "; 
+            cout << "curr->data = " << curr->data<<endl;
+            curr = curr->next;
+
+        }
+        cout<< "Exit " <<endl;
     }
 
-        return  head;
+        cout << "Time to Return "<< endl;
+
+        return  curr;
 }
 
 int main()
@@ -69,7 +91,7 @@ int main()
     Node *c = new Node(2);
     Node *d = new Node(2);
     Node *e = new Node(5);
-    Node *f = new Node(6);
+    Node *f = new Node(5);
 
     a->next = b;
     b->next = c;
@@ -82,10 +104,12 @@ int main()
     print(a);
 
     // Calling the Duplicate Remover Function 
-    Node* new_head  = deleteDuplicates(a);
+    cout << "Fn is CAlling" << endl;
+    Node* n  = deleteDuplicates(a);
 
     // cout<< "After the Removal of the Duplicates "<<endl;
-    print(new_head);
+    cout << "Why not Printing " << endl;
+    print(n);
 
     return 0;
 }
