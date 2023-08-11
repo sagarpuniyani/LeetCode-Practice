@@ -77,10 +77,11 @@ pair <Node* , Node*> SplitCircularLL( Node* head  ){
     fast->next = start;
     slow->next = head;
     
-    pair <Node* head , Node* start > = <head , start  >
+    pair <Node* , Node*  > pair1 ;
+    pair1.first = head;
+    pair1.second = start;
 
-    return < head  , start  >
-
+    return pair1;
 
 }
 
@@ -113,7 +114,17 @@ int main()
     //Traversing of the Circular linklist 
     print(a);
 
-    SplitCircularLL(a);
+    pair <Node* , Node* > p;
+
+
+    p = SplitCircularLL(a);
+
+    // Printing the splited linked list 
+
+    cout << "First Linked LIst " <<endl;
+    print(p.first);
+    cout << "second  Linked LIst " <<endl;
+    print(p.second);
     
     return 0;
 }
