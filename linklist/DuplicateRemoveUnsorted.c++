@@ -45,20 +45,37 @@ With the Three different Approach
 
 /*Apprach 1 -- LOOP inside Loop*/
 
+Node* removeDuplicates1(Node* head){
+    // Base Case 
+    if(head == NULL){
+        return NULL;
+    }
+    auto curr = head;
 
+    /*Outer Loop wil traverse the complete list */
 
+    while(curr->next != NULL){
+        cout<< " Enter in OUTER"<<endl;
+        // Inner LOOP of The Algo 
+        auto checker = curr ;
+        int data = curr->data;
 
+        while(checker->next != NULL){
+            /*It will check the remaining complete list to delet all 
+            duplicate element present in the linked list  */
 
-
-Node* removeDuplicates1(Node* head)
-{
-    
+            checker = checker->next;
+        }
+        curr = curr->next;
+    }
 }
 
 
 
 int main()
 {
+
+    
     
     return 0;
 }
