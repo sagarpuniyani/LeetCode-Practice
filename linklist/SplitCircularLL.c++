@@ -102,12 +102,12 @@ int main()
     Node *h = new Node(15);
 
     a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = e;
-    e->next = f;
-    f->next = g;
-    g->next = a;
+    b->next = a;
+    c->next = NULL;
+    d->next = NULL;
+    e->next = NULL;
+    f->next = NULL;
+    g->next = NULL;
     h->next = NULL;
 
 
