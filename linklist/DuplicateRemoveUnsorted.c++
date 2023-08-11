@@ -1,6 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+class Node{
+    public:
+    int data;
+    Node* next;
+
+    Node(int data){
+        this->data = data;
+        this->next = NULL;
+
+    }
+};
+
+// To Traverse the linklist
+void print(Node *head)
+{
+    while (head != NULL)
+    {
+        cout << head->data << "  ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
 /* To Removing the Dulplicate Node From the LINKED LIST 
 With the Three different Approach 
 
@@ -17,28 +41,20 @@ With the Three different Approach
         S.C. = O(N)
 
 */
-class Node
-{
-public:
-    int data;
-    Node *next;
 
-    Node(int d)
-    {
-        this->data = d;
-        this->next = NULL;
-    }
-};
 
-void print(Node *head)
+/*Apprach 1 -- LOOP inside Loop*/
+
+
+
+
+
+
+Node* removeDuplicates1(Node* head)
 {
-    while (head != NULL)
-    {
-        cout << head->data << "  ";
-        head = head->next;
-    }
-    cout << endl;
+    
 }
+
 
 
 int main()
