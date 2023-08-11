@@ -68,6 +68,11 @@ void SplitCircularLL( Node* head  ){
     After  That We will try to make the Algo for  the 
     spliting the Single LInk list into two halves of the link list 
     */
+
+    /* The start Pointer is Created  to make the head2 of the right
+    circular link list 
+    */
+
 }
 
 
