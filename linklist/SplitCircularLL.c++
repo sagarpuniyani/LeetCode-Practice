@@ -32,7 +32,7 @@ void print(Node* head){
     cout<<endl;
 }
 
-void SplitCircularLL( Node* head  ){
+pair <Node* , Node*> SplitCircularLL( Node* head  ){
 
     //  Initiating two Pointers Fast and Slow 
     auto fast = head->next;
@@ -72,6 +72,14 @@ void SplitCircularLL( Node* head  ){
     /* The start Pointer is Created  to make the head2 of the right
     circular link list 
     */
+
+    Node* start = slow->next;
+    fast->next = start;
+    slow->next = head;
+
+
+    
+
 
 }
 
