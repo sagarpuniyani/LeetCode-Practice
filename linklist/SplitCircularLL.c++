@@ -76,9 +76,10 @@ pair <Node* , Node*> SplitCircularLL( Node* head  ){
     Node* start = slow->next;
     fast->next = start;
     slow->next = head;
-
-
     
+    pair <Node* head , Node* start > = <head , start  >
+
+    return < head  , start  >
 
 
 }
