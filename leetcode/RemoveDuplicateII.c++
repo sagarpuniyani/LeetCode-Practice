@@ -44,7 +44,7 @@ Node* deleteDuplicates(Node* head) {
 
     // Base Case 
     if(head == NULL || head->next == NULL){
-        return NULL;
+        return head;
     }
     int TerminatingValue;
 
@@ -63,7 +63,7 @@ Node* deleteDuplicates(Node* head) {
 
     cout<< "Before Loop "<<endl;
 
-    while(curr->next != NULL ){
+    while(curr != NULL ){
         cout<< "Enter "<<endl;
         if(curr->data == forw->data ){
             cout << " Same Data = "<< curr->data<<endl; 
@@ -109,7 +109,7 @@ int main()
     Node *g = new Node(5);
 
     a->next = b;
-    b->next = c;
+    b->next = NULL;
     c->next = d;
     d->next = e;
     e->next = f;
