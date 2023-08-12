@@ -40,32 +40,50 @@ of the Linked list
 
 
 Node* deleteDuplicates(Node* head) {
-        
-        auto curr = head;
-        auto prev = head;
+
+    // Base Case 
+    if(head == NULL || head->next == NULL){
+        return NULL;
+    }
+
+
+    /*Adding the temp Node in Starting of the LINKed LIst 
+    To make The Problem Easiler */
+
+    Node* temp = new Node(0);
+    temp->next = head;
+
+    auto prev = temp;
+    auto curr = temp->next;
 
     while(curr->next != NULL){
-        if((curr->data == curr->next->data ) && (curr->next != NULL)){
-            Node*  NodeToDelete = curr->next;
-            Node* CurrToLocate = curr->next->next;
 
-            delete (NodeToDelete);
-            curr->next = CurrToLocate;
+        /*Checking the data  which is Duplicate or NOT */
+
+        if((curr->data == curr->next->data) && (curr->next != NULL) ){
+            auto CurrToLocate =  curr->next;
+            auto NodeToDelete = curr;
+
+            curr = CurrToLocate;
+            delete(NodeToDelete);
         }
-        
+        prev = curr;
+        curr = curr->next;
     }
+
+    return temp->next;
 
 }
 
 
 int main()
 {
-     Node *a = new Node(1);
+    Node *a = new Node(1);
     Node *b = new Node(1);
     Node *c = new Node(2);
-    Node *d = new Node(2);
-    Node *e = new Node(2);
-    Node *f = new Node(5);
+    Node *d = new Node(3);
+    Node *e = new Node(3);
+    Node *f = new Node(4);
     Node *g = new Node(5);
 
     a->next = b;
@@ -75,6 +93,10 @@ int main()
     e->next = f;
     f->next = g;
     g->next = NULL;
+
+    // Print the Link list 
+    cout << "Printing " << endl;
+    print(a);
     
     return 0;
 }
