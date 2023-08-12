@@ -63,7 +63,7 @@ Node* deleteDuplicates(Node* head) {
 
     cout<< "Before Loop "<<endl;
 
-    while(curr != NULL ){
+    while(curr->next != NULL ){
         cout<< "Enter "<<endl;
         if(curr->data == forw->data ){
             cout << " Same Data = "<< curr->data<<endl; 
@@ -89,6 +89,13 @@ Node* deleteDuplicates(Node* head) {
     }
     }
 
+    if(curr->data == TerminatingValue){
+        auto NodeTodelete = curr ;
+        prev->next = NULL;
+
+        delete (NodeTodelete);
+    }
+
     /*Adding the temp Node in Starting of the LINKed LIst 
     To make The Problem Easiler */
 
@@ -101,15 +108,15 @@ Node* deleteDuplicates(Node* head) {
 int main()
 {
     Node *a = new Node(1);
-    Node *b = new Node(1);
-    Node *c = new Node(2);
+    Node *b = new Node(2);
+    Node *c = new Node(3);
     Node *d = new Node(3);
-    Node *e = new Node(3);
+    Node *e = new Node(4);
     Node *f = new Node(4);
     Node *g = new Node(5);
 
     a->next = b;
-    b->next = NULL;
+    b->next = c;
     c->next = d;
     d->next = e;
     e->next = f;
