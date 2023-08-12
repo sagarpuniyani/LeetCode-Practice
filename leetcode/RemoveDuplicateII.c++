@@ -46,10 +46,48 @@ Node* deleteDuplicates(Node* head) {
     if(head == NULL || head->next == NULL){
         return NULL;
     }
+    int TerminatingValue;
 
+    Node* temp = new Node(-1);
+    temp->next = head;
+
+    auto prev = temp;
+    auto curr = prev->next;
+    auto forw = curr->next;
+
+    cout<< "prev = "<< prev->data<<endl;
+    cout<< "curr = "<< curr->data<<endl;
+    cout<< "forw = "<< forw->data<<endl;
+
+
+
+    cout<< "Before Loop "<<endl;
+
+    while(curr->next != NULL ){
+        cout<< "Enter "<<endl;
+        if(curr->data == forw->data ){
+            TerminatingValue = curr->data;
+        }
+
+        if(TerminatingValue == curr->data){
+            auto NodeToDelete = curr;
+            prev->next = forw;
+            curr = forw;
+
+            delete(NodeToDelete);
+            forw = curr->next;
+            cout<< " Exit "<<endl;
+        }
+
+        prev = curr;
+        curr = forw;
+        forw = forw->next;
+    }
 
     /*Adding the temp Node in Starting of the LINKed LIst 
     To make The Problem Easiler */
+
+    return temp->next;
 
     cout << " Ending of Fn...."<< endl;
 }
@@ -81,7 +119,7 @@ int main()
     Node* r = deleteDuplicates(a);
 
     cout<<"After Algo " << endl;
-    // print(r);
+    print(r);
 
     
     return 0;
