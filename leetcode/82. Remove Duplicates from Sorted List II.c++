@@ -34,11 +34,18 @@ void print(Node *head)
     cout << endl;
 }
 /*
-This the problem of the Removing the Duplcate Node 
+This the problem of the Removing the ALL the Duplicate Node 
 of the Linked list 
 */
 
 
+Node* deleteDuplicates(Node* head) {
+        
+        auto cuur = head;
+        auto prev = head;
+
+        
+}
 
 
 int main()
