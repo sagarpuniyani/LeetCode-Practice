@@ -66,22 +66,27 @@ Node* deleteDuplicates(Node* head) {
     while(curr->next != NULL ){
         cout<< "Enter "<<endl;
         if(curr->data == forw->data ){
+            cout << " Same Data = "<< curr->data<<endl; 
             TerminatingValue = curr->data;
         }
 
         if(TerminatingValue == curr->data){
             auto NodeToDelete = curr;
+            cout << "Node to Delete  = "<< NodeToDelete->data<<endl;
             prev->next = forw;
             curr = forw;
 
             delete(NodeToDelete);
             forw = curr->next;
-            cout<< " Exit "<<endl;
         }
+
+    else {
 
         prev = curr;
         curr = forw;
         forw = forw->next;
+        cout<< "Exit "<<endl;
+    }
     }
 
     /*Adding the temp Node in Starting of the LINKed LIst 
