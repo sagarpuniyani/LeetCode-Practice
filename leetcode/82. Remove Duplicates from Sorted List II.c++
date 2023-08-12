@@ -41,10 +41,20 @@ of the Linked list
 
 Node* deleteDuplicates(Node* head) {
         
-        auto cuur = head;
+        auto curr = head;
         auto prev = head;
 
+    while(curr->next != NULL){
+        if((curr->data == curr->next->data ) && (curr->next != NULL)){
+            Node*  NodeToDelete = curr->next;
+            Node* CurrToLocate = curr->next->next;
+
+            delete (NodeToDelete);
+            curr->next = CurrToLocate;
+        }
         
+    }
+
 }
 
 
