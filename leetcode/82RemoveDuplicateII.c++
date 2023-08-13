@@ -115,13 +115,24 @@ int main()
     Node *f = new Node(4);
     Node *g = new Node(5);
 
+
     a->next = b;
     b->next = c;
     c->next = d;
     d->next = e;
     e->next = f;
     f->next = g;
-    g->next = NULL;
+    g->next = new Node(6);
+    g->next->next = new Node(8);
+    g->next->next->next = new Node(8);
+    g->next->next->next->next = new Node(8);
+    g->next->next->next->next->next = new Node(8);
+    g->next->next->next->next->next->next = new Node(9);
+    g->next->next->next->next->next->next->next = new Node(10);
+    g->next->next->next->next->next->next->next->next = new Node(10);
+    g->next->next->next->next->next->next->next->next->next = new Node(11);
+    g->next->next->next->next->next->next->next->next->next->next = new Node(12);
+    g->next->next->next->next->next->next->next->next->next->next->next = new Node(12);
 
     // Print the Link list 
     cout << "Printing " << endl;
