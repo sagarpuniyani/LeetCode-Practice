@@ -87,11 +87,11 @@ Maximum Product of the Sub Array
 int main()
 {
 
-    vector<int> arr = {2,3,-2,4};
+    vector<int> arr = {2 ,8 , -1 , 0 ,5 ,3,-2,4};
 
     // Printing the Array 
 
-    print(arr , 4);
+    print(arr , arr.size());
 
     Solution Obj ;
 
