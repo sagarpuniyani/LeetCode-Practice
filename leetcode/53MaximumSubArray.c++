@@ -20,9 +20,9 @@ using namespace std;
 
 */
 
-void print(int* arr , int n ){
+void print(vector<int> arr , int n ){
     for(int i=0 ; i<n ; i++){
-		cout<<" "<<*(arr+i);
+		cout<<" "<< arr[i];
 	}
 	cout<<endl;
 }
@@ -42,7 +42,6 @@ step 2 - maxi = max(maxi , sum )
 step 3 - if(sum < 0 ) sum = 0 ;
 
 }
-
 */
 
 class Solution {
@@ -51,6 +50,7 @@ public:
 
         int sum = 0 ;
         int maxi = nums[0];
+        int mini = 100;
 
         for (int i=0 ; i < nums.size() ; i++){
             // step 1 
@@ -58,28 +58,64 @@ public:
 
             // step -2 
             maxi = max(sum  , maxi );
+            mini = min(sum  , mini );
+
+            // Trying to store the Minnimum Sum 
+
 
             // step - 3 
             if(sum < 0 )
             sum = 0 ;
         }
 
-        return maxi;
+        return mini;
         
+    }
+
+    // Maximum Product of the Sub Array 
+    int maxProduct(vector<int>& nums) {
+        int product = 1 ; 
+        int maxi = nums[0];
+
+
+    for (int i = 0 ; i < nums.size() ; i++){
+        // step -1
+        product = product * nums[i];
+
+        // step -2 
+        maxi = max(product , maxi);
+
+        // step -3 
+        if(product > 0)
+        product = 1 ;
+
+    }
+
+
     }
 };
 
-
+/*
+Maximum Product of the Sub Array 
+*/
 
 int main()
 {
 
-    vector<int> arr = {-2 , 1 , -3 , 4 , -1 , 2 , 1 , -5 , 4};
+    vector<int> arr = {2,3,-2,4};
+
+    // Printing the Array 
+
+    print(arr , 4);
 
     Solution Obj ;
 
-    int result = Obj.maxSubArray(arr);
-    cout << "The Sum of Maximum Sub Array "<< result << endl;
+    int sum  = Obj.maxSubArray(arr);
+    cout << "The Sum of Maximum Sub Array "<< sum << endl;
+
+    int product = Obj.maxProduct(arr);
+    cout << "The Product of Maximum Sub Array "<< product << endl;
+
     
     return 0;
 }
