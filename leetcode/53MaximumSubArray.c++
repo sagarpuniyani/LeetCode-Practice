@@ -7,16 +7,16 @@ using namespace std;
     There are Three Approach To solve The Problem 
 
         Approach - 1 
-        T.C. = O(N^3)
-        S.C. = O(1)
+            T.C. = O(N^3)
+            S.C. = O(1)
 
-    Approach - 2 
-        T.C. = O(N^2)
-        S.C> = O(1)
+        Approach - 2 
+            T.C. = O(N^2)
+            S.C> = O(1)
 
-    Approach - 3  --(Kadane's Algo )
-        T.C. = O(N)
-        S.C. = O(1)
+        Approach - 3  --(Kadane's Algo )
+            T.C. = O(N)
+            S.C. = O(1)
 
 */
 
@@ -26,6 +26,7 @@ void print(int* arr , int n ){
 	}
 	cout<<endl;
 }
+
 
 
 /*There Are three Steps of Kadane's Algo  
