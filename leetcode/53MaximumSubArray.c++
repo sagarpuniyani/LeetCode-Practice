@@ -27,6 +27,23 @@ void print(int* arr , int n ){
 	cout<<endl;
 }
 
+
+/*There Are three Steps of Kadane's Algo  
+
+    set sum = 0 and Maxi = first element of the Array 
+
+for (int i= 0  --> n ){
+
+step 1 - sum = sum  + arr[i]
+
+step 2 - maxi = max(maxi , sum )
+
+step 3 - if(sum < 0 ) sum = 0 ;
+
+}
+
+*/
+
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
@@ -39,7 +56,7 @@ public:
 int main()
 {
 
-    int arr = {};
+    int arr[] = {-2 , 1 , -3 , 4 , -1 , 2 , 1 , -5 , 4};
 
     
     return 0;
