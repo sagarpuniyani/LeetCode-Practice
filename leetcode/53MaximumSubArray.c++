@@ -50,7 +50,6 @@ public:
 
         int sum = 0 ;
         int maxi = nums[0];
-        int mini = 100;
 
         for (int i=0 ; i < nums.size() ; i++){
             // step 1 
@@ -58,39 +57,25 @@ public:
 
             // step -2 
             maxi = max(sum  , maxi );
-            mini = min(sum  , mini );
-
-            // Trying to store the Minnimum Sum 
-
 
             // step - 3 
             if(sum < 0 )
             sum = 0 ;
         }
 
-        return mini;
+        return maxi;
         
     }
 
     // Maximum Product of the Sub Array 
+
+
     int maxProduct(vector<int>& nums) {
         int product = 1 ; 
         int maxi = nums[0];
 
 
-    for (int i = 0 ; i < nums.size() ; i++){
-        // step -1
-        product = product * nums[i];
-
-        // step -2 
-        maxi = max(product , maxi);
-
-        // step -3 
-        if(product > 0)
-        product = 1 ;
-
-    }
-
+    
 
     }
 };
