@@ -48,6 +48,23 @@ step 3 - if(sum < 0 ) sum = 0 ;
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
+
+        int sum = 0 ;
+        int maxi = nums[0];
+
+        for (int i=0 ; i < nums.size() ; i++){
+            // step 1 
+            sum += nums[i];
+
+            // step -2 
+            maxi = max(sum  , maxi );
+
+            // step - 3 
+            if(sum < 0 )
+            sum = 0 ;
+        }
+
+        return maxi;
         
     }
 };
@@ -57,8 +74,12 @@ public:
 int main()
 {
 
-    int arr[] = {-2 , 1 , -3 , 4 , -1 , 2 , 1 , -5 , 4};
+    vector<int> arr = {-2 , 1 , -3 , 4 , -1 , 2 , 1 , -5 , 4};
 
+    Solution Obj ;
+
+    int result = Obj.maxSubArray(arr);
+    cout << "The Sum of Maximum Sub Array "<< result << endl;
     
     return 0;
 }
