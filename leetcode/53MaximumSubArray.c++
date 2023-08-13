@@ -71,27 +71,41 @@ public:
 
 
     int maxProduct(vector<int>& nums) {
-        int product = 1 ; 
-        int maxi = nums[0];
 
+        int letfProduct =1;
+        int rightProduct =1;
+        int ans = nums[0];
 
-    
+        for (int i = 0 ; i < nums.size() ; i++){
 
+            letfProduct = letfProduct == 0 ? 1 : letfProduct;
+            rightProduct = rightProduct == 0 ? 1 : rightProduct;
+
+            // Starting from left
+            letfProduct *= nums[i];
+
+            // Starting From Right 
+            rightProduct *= nums[nums.size()-1-i];
+
+             // Ans Stores the Maximum Product 
+            ans = max( ans , max(letfProduct , rightProduct )  );
+
+        }
+
+        // Returning the maximum product 
+        return ans;
     }
 };
 
-/*
-Maximum Product of the Sub Array 
-*/
 
 int main()
 {
 
-    vector<int> arr = {2 ,8 , -1 , 0 ,5 ,3,-2,4};
+    vector<int> arr = {2,3,-2,4};
 
     // Printing the Array 
 
-    print(arr , arr.size());
+    print(arr , 4);
 
     Solution Obj ;
 
