@@ -20,6 +20,12 @@ using namespace std;
 
 */
 
+void print(int* arr , int n ){
+    for(int i=0 ; i<n ; i++){
+		cout<<" "<<*(arr+i);
+	}
+	cout<<endl;
+}
 
 class Solution {
 public:
@@ -33,7 +39,8 @@ public:
 int main()
 {
 
-    
+    int arr = {};
+
     
     return 0;
 }
