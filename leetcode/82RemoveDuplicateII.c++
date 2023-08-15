@@ -52,45 +52,45 @@ Node* deleteDuplicates(Node* head) {
     temp->next = head;
 
     auto prev = temp;
-    auto curr = prev->next;
-    auto forw = curr->next;
+    auto current = prev->next;
+    auto forw = current->next;
 
     cout<< "prev = "<< prev->data<<endl;
-    cout<< "curr = "<< curr->data<<endl;
+    cout<< "current = "<< current->data<<endl;
     cout<< "forw = "<< forw->data<<endl;
 
 
 
     cout<< "Before Loop "<<endl;
 
-    while(curr->next != NULL ){
+    while(current->next != NULL ){
         cout<< "Enter "<<endl;
-        if(curr->data == forw->data ){
-            cout << " Same Data = "<< curr->data<<endl; 
-            TerminatingValue = curr->data;
+        if(current->data == forw->data ){
+            cout << " Same Data = "<< current->data<<endl; 
+            TerminatingValue = current->data;
         }
 
-        if(TerminatingValue == curr->data){
-            auto NodeToDelete = curr;
+        if(TerminatingValue == current->data){
+            auto NodeToDelete = current;
             cout << "Node to Delete  = "<< NodeToDelete->data<<endl;
             prev->next = forw;
-            curr = forw;
+            current = forw;
 
             delete(NodeToDelete);
-            forw = curr->next;
+            forw = current->next;
         }
 
     else {
 
-        prev = curr;
-        curr = forw;
+        prev = current;
+        current = forw;
         forw = forw->next;
         cout<< "Exit "<<endl;
     }
     }
 
-    if(curr->data == TerminatingValue){
-        auto NodeTodelete = curr ;
+    if(current->data == TerminatingValue){
+        auto NodeTodelete = current ;
         prev->next = NULL;
 
         delete (NodeTodelete);
@@ -133,6 +133,10 @@ int main()
     g->next->next->next->next->next->next->next->next->next = new Node(11);
     g->next->next->next->next->next->next->next->next->next->next = new Node(12);
     g->next->next->next->next->next->next->next->next->next->next->next = new Node(12);
+    g->next->next->next->next->next->next->next->next->next->next->next->next = new Node(18);
+    g->next->next->next->next->next->next->next->next->next->next->next->next->next = new Node(18);
+    g->next->next->next->next->next->next->next->next->next->next->next->next->next->next = new Node(18);
+    g->next->next->next->next->next->next->next->next->next->next->next->next->next->next->next = new Node(20);
 
     // Print the Link list 
     cout << "Printing " << endl;
