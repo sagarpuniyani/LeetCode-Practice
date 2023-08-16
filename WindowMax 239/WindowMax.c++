@@ -24,23 +24,26 @@ public:
     }
 
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-        /* Allocating the pointers */
 
-        vector <int > arr = {};
-        vector <int> temp(nums.begin() , nums.begin()+k);
-        print(temp);
+        vector <int> arr = {};
+        
+        int start = 0;
+        int end = k;
 
-        int maximum = MaxFromSubArr(temp);
+        while(end <= nums.size()){
+            vector<int> subarray(nums.begin() + start, nums.begin() + end );
 
-        arr.push_back(maximum);
+            cout<<"Sub Array = ";
+            print(subarray);
+            int MaxElement = MaxFromSubArr(subarray);
 
+            arr.push_back(MaxElement);
 
-        /*Recursive Call should conduct */
+            start++;
+            end++;
+        }
 
-
-        return arr;
-
-
+    return arr;
     }
 };
 
