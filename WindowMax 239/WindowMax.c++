@@ -2,93 +2,71 @@
 using namespace std;
 
 
-
+void print(vector <int> arr ){
+    for (auto item : arr ){
+        cout << "  "<< item;
+    }
+    cout<<endl;
+}
 class Solution {
 public:
 
-    void print(vector <int> nums){
-        // for (int i = 0 ; i<nums.size() ; i++){
-        //     cout << "  "<< nums[i];
-        // } 
+    int MaxFromSubArr(vector <int> arr ){
+        int maxm = arr[0];
 
-        for (int item : nums){
-            cout << "  " << item;
-        }
-        cout<<endl;
-    }
-
-    int MaxFromArr(vector<int > nums , int start ,  int k ){
-        int maxi = nums[start];
-        for (int i = start ; i<k ; i++){
-            if(maxi < nums[i]){
-                maxi = nums[i];
+        for (auto item : arr ){
+            if(maxm < item ){
+                maxm = item ;
             }
         }
 
-        return maxi;
+        return maxm;
     }
 
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        /* Allocating the pointers */
 
-    vector <int> maxSlidingWindow(vector<int>& nums, int k) {
+        vector <int > arr = {};
+        vector <int> temp(nums.begin() , nums.begin()+k);
+        print(temp);
 
-        cout << "Fn Calling..... "<< endl;
-        int cnt = k;
-        vector <int> arr = {};
+        int maximum = MaxFromSubArr(temp);
 
-        /*allocating the Slidding window of the Arr */
-        int start = 0 , end = 0;
-        while((cnt-1)){
-            end ++ ;
-            cnt-- ;
-        }
-        cout << " k = "<< k << endl;
-
-        // arr.push_back(nums[start]);
-        // arr.push_back(nums[end]);
-
-        int MaxSubArr = MaxFromArr( nums ,start ,  k);
-
-        arr.push_back(MaxSubArr);
+        arr.push_back(maximum);
 
 
-        /* Call the Recursive Finction to Traverse Complete Array 
-        the recursive Call needs the partial Access of the Vector */
-
-        int* ptr = &nums[start];
+        /*Recursive Call should conduct */
 
 
-    
-
-
-
-
-        cout<< "Fn Ending......"<< endl;
         return arr;
-        
+
+
     }
 };
 
 int main()
 {
+
     vector <int> arr = {1,3,-1,-3,5,3,6,7};
 
-    Solution obj;
+    print(arr);
 
-    obj.print(arr);
-
-    vector <int> res = obj.maxSlidingWindow(arr , 3);
-
-    obj.print(res);
+    Solution obj ;
 
 
-    // Example of catanation of vector 
-    vector<int> vector1 = {1, 2, 3};
-    vector<int> vector2 = {4, 5, 6};
+   // Create a new vector for the subarray
+    // vector<int> subarray(arr.begin() , arr.begin() + 3);
 
-    vector1.insert(vector1.end(), vector2.begin(), vector2.end());
+    // cout<< "Sub array = ";
+    // print(subarray);
 
-    cout << "Example = ";
-    obj.print(vector1);
+    // cout << "sub arr at 0 "<< subarray[0]<<endl;
+    // cout << "sub arr at 1 "<< subarray[1]<<endl;
+    // cout << "sub arr at 2 "<< subarray[2]<<endl;
+
+    vector <int> ans =  obj.maxSlidingWindow(arr , 3 );
+    print(ans);
+
     
     return 0;
 }
