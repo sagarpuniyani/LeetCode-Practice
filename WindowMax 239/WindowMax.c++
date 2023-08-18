@@ -31,7 +31,7 @@ public:
         int end = k;
 
         while(end <= nums.size()){
-            vector<int> subarray(nums.begin() + start, nums.begin() + end );
+            vector <int> subarray(nums.begin() + start, nums.begin() + end );
 
             cout<<"Sub Array = ";
             print(subarray);
