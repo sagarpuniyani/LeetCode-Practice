@@ -62,6 +62,7 @@ int main()
 
     // cout<< "Sub array = ";
     // print(subarray);
+    // this is the data structure 
 
     // cout << "sub arr at 0 "<< subarray[0]<<endl;
     // cout << "sub arr at 1 "<< subarray[1]<<endl;

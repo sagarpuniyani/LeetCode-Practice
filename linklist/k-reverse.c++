@@ -40,7 +40,7 @@ bool has_nodes(Node *head, int k)
     {
         if (temp != NULL)
         {
-            temp = temp->next;
+            temp = temp -> next;
             k--;
         }
         else
