@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int arr[4] = {1,3,4,5};
-    char ch[6] = "abcde";
+    char ch[] = "abcde";
 
     cout<< "arr = " << arr <<endl;
     cout << "ch = " << ch << endl;
@@ -14,8 +14,9 @@ int main()
 
     cout << " p = " << p << endl;
     cout << " c = " << c << endl;
+    cout << " ch[1] = " << ch[1] << endl;
 
-    char temp = 'z' ; 
+    char temp = 'z'; 
     char *t = &temp;
 
     cout << " t = " << t << endl;
