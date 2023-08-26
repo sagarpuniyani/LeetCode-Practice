@@ -66,9 +66,9 @@ bool CanBeFlowerBedPlaced(vector<int>& flowerbed, int n){
         if(flowerbed[i] == 0 && (i==0  || flowerbed[i-1] == 0 ) && ( flowerbed[i+1]==0 || i == flowerbed.size()-1)){
         --n;
         flowerbed[i] = 1 ;
-        }
         if( n == 0)
             return true;
+        }
     }
 
     return false;
