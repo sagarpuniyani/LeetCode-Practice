@@ -4,4 +4,5 @@
         "ostream": "cpp",
         "new": "cpp"
     },
+    "C_Cpp.errorSquiggles": "disabled",
 }
