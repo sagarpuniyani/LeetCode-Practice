@@ -55,12 +55,34 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
 
 }
 
+// optimal Solution 
+
+bool CanBeFlowerBedPlaced(vector<int>& flowerbed, int n){
+    // Trivial Case 
+    if (n ==0 ) 
+        return true;
+
+    for (int i = 0 ; i<flowerbed.size() ; i++){
+        if(flowerbed[i] == 0 && (i==0  || flowerbed[i-1] == 0 ) && ( flowerbed[i+1]==0 || i == flowerbed.size()-1)){
+        --n;
+        flowerbed[i] = 1 ;
+        }
+        if( n == 0)
+            return true;
+    }
+
+    return false;
+}
+
+
+
 
 int main()
 {
-    vector<int> flowerbed = {1,0,0,0,1};
+    vector<int> flowerbed = {1,0,0,0,0,1};
     bool ans = canPlaceFlowers(flowerbed , 1);
-    cout << "Is Flower Can be Placed : " << ans << endl;
+    bool res = CanBeFlowerBedPlaced(flowerbed , 2 );
+    cout << "Is Flower Can be Placed : " << ans << " & " << res  << endl;
     
     return 0;
 }
