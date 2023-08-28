@@ -9,7 +9,15 @@ private:
 
 public:
     void push(int x) {
-        
+        int size = q2.size();
+        q1.push(x);
+
+        while (size--){
+            q1.push(q2.front());
+            q2.pop();
+        }
+        swap(q1 , q2);
+
     }
     
     int pop() {
