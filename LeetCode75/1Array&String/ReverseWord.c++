@@ -27,27 +27,34 @@ string  reverseWords(string s) {
     stack <string> words;
     string word , res ;
 
+    s += " ";
+
     /*find the words */
     for(auto i=0 ; i<= s.size()-1 ; i++){
-        cout << " i = " << i << endl;
         if(!Isempty(s[i])){
             word += s[i];
+            cout << " w = " << word << endl;
         }
-        else {
-            if(word.size() != 0 ){
-                cout << " The Word is = " << word << endl;
-                words.push(word);
-                word.clear();
-            }
+        else if(Isempty(s[i])) {
+            continue;
+        }
+        else{
+            cout << " The Word is = " << word << endl;
+            words.push(word);
+
+            word.clear();
         }
     }
 
-
+    int len = words.size();
+    cout << "len = " << len << endl;
     /*Putting the words Back */
-    while (!words.empty()){
+    while (len--){
             res += words.top();
             words.pop();
+        if (!words.empty()){
             res += " ";
+        }
     }
 
     return res ; 
@@ -61,7 +68,7 @@ int main()
     // cout << "s + m =" << s+m << endl;
     // cout << "s[0]  = " << Isempty(s[0]) << endl;
 
-    string a = "the sky is blue";
+    string a = "the sky     is blue";
     cout << " a = " << a << endl;
     cout << " a ka size = " << a.size() << endl;
     string b = reverseWords(a); 
