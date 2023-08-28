@@ -16,7 +16,7 @@ class Node {
 
 int func(Node* root ){
 
-    /*Declaration of the Test Function */
+    /*Declaration of the Test Function  */
 
     // Base Case 
     if(root == NULL){
@@ -27,7 +27,7 @@ int func(Node* root ){
         return 0;
     }
 
-    // Return 
+    // Return the height of the tree 
     return 1 + func(root->left) + func(root->right) ;
 
 }
