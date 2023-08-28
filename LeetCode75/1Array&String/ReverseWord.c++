@@ -35,10 +35,7 @@ string  reverseWords(string s) {
             word += s[i];
             cout << " w = " << word << endl;
         }
-        else if(Isempty(s[i])) {
-            continue;
-        }
-        else{
+        else if( (!Isempty(s[i+1]) || i+1 == s.size()-1) && word.size() != 0  ){
             cout << " The Word is = " << word << endl;
             words.push(word);
 
@@ -68,7 +65,7 @@ int main()
     // cout << "s + m =" << s+m << endl;
     // cout << "s[0]  = " << Isempty(s[0]) << endl;
 
-    string a = "the sky     is blue";
+    string a = "  hello world  ";
     cout << " a = " << a << endl;
     cout << " a ka size = " << a.size() << endl;
     string b = reverseWords(a); 
