@@ -21,21 +21,30 @@ public:
     }
     
     int pop() {
-        
+        int res = q2.front();
+        q2.pop();
+        return res;
     }
     
     int top() {
-        
+        return q2.front();
     }
     
     bool empty() {
-        
+        return q2.empty();
     }
 
 };
 
 int main()
 {
-    
+    Mystack st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+
+    cout << " Top of the Stack " << st.top() << endl;
+    st.pop();    
+    cout << " Top of the Stack " << st.top() << endl;
     return 0;
 }
