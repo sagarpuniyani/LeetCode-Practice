@@ -44,18 +44,39 @@ string reverseVowels(string s) {
     return s;
 }
 
+// another Approach of the Stack 
+
+string ReveringTheVowels( string  s ){
+    stack <char> st;
+
+/*Inserting All the Vowels in the String */
+    for(auto i = 0 ; i<= s.size()-1 ; i++){
+        if(Isvowel(s[i])){
+            st.push(s[i]);
+        }
+    }
+
+/* Putting All the Reversed Vowel to the String */
+    for(auto i = 0 ; i<= s.size()-1 ; i++){
+        if(Isvowel(s[i])){
+            s[i] = st.top();
+            st.pop();
+        }
+    }
+
+    return s;
+}
+
 int main()
 {
 
     string s = "hello";
-
-    // cout << " s[0] = " << s[0] << endl;
-    // cout << " s[s.size()-1] = " << s[s.size()-1] << endl;
-    // swap(s[1] , s[4]);
-    // cout << "s = " << s << endl;
-
     s = reverseVowels(s);
     cout << " S = " << s << endl;
+
+    string st = "LeetCode";
+    st = ReveringTheVowels(st);
+    cout << " st = " << st << endl;
     
     return 0;
 }
