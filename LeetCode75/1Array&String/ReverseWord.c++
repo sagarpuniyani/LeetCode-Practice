@@ -23,22 +23,50 @@ bool Isempty(char ch ){
 }
 
 
-string reverseWords(string s) {
+string  reverseWords(string s) {
     stack <string> words;
-    string word;
+    string word , res ;
 
     /*find the words */
     for(auto i=0 ; i<= s.size()-1 ; i++){
-
+        cout << " i = " << i << endl;
+        if(!Isempty(s[i])){
+            word += s[i];
+        }
+        else {
+            if(word.size() != 0 ){
+                cout << " The Word is = " << word << endl;
+                words.push(word);
+                word.clear();
+            }
+        }
     }
+
+
+    /*Putting the words Back */
+    while (!words.empty()){
+            res += words.top();
+            words.pop();
+            res += " ";
+    }
+
+    return res ; 
+    
 }
 
 
 int main()
 {
-    string s = "  hello " , m = "world ";
-    cout << "s + m =" << s+m << endl;
-    cout << "s[0]  = " << Isempty(s[0]) << endl;
+    // string s = "  hello " , m = "world ";
+    // cout << "s + m =" << s+m << endl;
+    // cout << "s[0]  = " << Isempty(s[0]) << endl;
+
+    string a = "the sky is blue";
+    cout << " a = " << a << endl;
+    cout << " a ka size = " << a.size() << endl;
+    string b = reverseWords(a); 
+    cout << " b = " << b << endl;
+    cout << " b ka size = " << b.size() << endl;
     
     return 0;
 }
