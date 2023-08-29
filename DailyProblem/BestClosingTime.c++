@@ -27,10 +27,22 @@ Explanation: It is best to close the shop at the 4th hour as customers arrive at
 /* There are two Approaches 
 1. Single go Pass in the String */
 int bestClosingTime(string customers) {
-        
+    int score = 0 , max_score = 0 , hour = -1;
+
+    for(auto i = 0 ; i < customers.size() ; i++){
+        score += (customers[i] == 'Y') ? 1 : -1 ;
+
+        if(score > max_score){
+            max_score = score;
+            hour = i;
+        }
+    }
+    return hour +1;
 }
 int main()
 {
+    int res = bestClosingTime("YYNY");
+    cout << "res = " << res << endl;
     
     return 0;
 }
