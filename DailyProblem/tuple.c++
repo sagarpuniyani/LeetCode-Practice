@@ -34,5 +34,21 @@ int main()
     cout << " " << get<2>(geek) << endl;
 
 
+    // making the another tuple 
+
+    tuple < int , int , char , string > t1(1 , 5 , 'd' , "javascript ") ;
+
+    // methods of the tuple 
+//  decomposition of the tuple 
+
+    auto [a , b , c , d ] = t1;
+
+    cout << " a = " << a << endl;
+    cout << " b = " << b << endl;
+    cout << " c = " << c << endl;
+    cout << " d = " << d << endl;
+
+
+
     return 0;
 }
