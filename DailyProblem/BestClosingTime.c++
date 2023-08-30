@@ -39,6 +39,9 @@ int bestClosingTime(string customers) {
     }
     return hour +1;
 }
+
+
+/*2 . Prefix and Suffix Sum of the Yes And No */
 int main()
 {
     int res = bestClosingTime("YYNY");
