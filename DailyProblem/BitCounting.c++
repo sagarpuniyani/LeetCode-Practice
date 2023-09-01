@@ -107,6 +107,28 @@ vector<int> counting_Bits(int n) {
 }
 
 
+// 3. Kerningam's Algo
+
+int Count_Kerningam(int num ){
+    int count = 0;
+    while(num != 0 ){
+        int rsbm = num & -num ;
+        num -= rsbm;
+        count++;
+    }
+        return count;
+}
+
+vector<int> Count_Bit_Kerningam(int n){
+    vector <int> ans;
+    for(int i=0;i<=n;i++)
+        {
+            ans.push_back(Count_Kerningam(i));
+        }
+    return ans;
+}
+
+
 
 /*Optimal Code of the Bit Count */
 int main()
@@ -117,7 +139,7 @@ int main()
     cout << "Brute Force " << endl;
 
 
-    vector <int> vec = counting_Bits(5);
+    vector <int> vec = Count_Bit_Kerningam(5);
     print(vec);
 
     return 0;
