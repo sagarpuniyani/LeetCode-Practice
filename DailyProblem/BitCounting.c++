@@ -49,12 +49,43 @@ vector<int> countBits(int n) {
 
 
 // 1. Brute Force 
-vector<int> CountBits(int n ){
-    vector <int> ans(n+1);
-    for(int i = 0 ; i <= n ; i++ ){
-        
+
+// This is function  Dec to Binary is not the complete 
+// Function Which Consider Each And every Test Cases 
+vector <int> Dec_To_Bin(int n ){
+    vector <int> ans;
+    // base case 
+    if (n == 0 ){
+        ans.push_back(0);
     }
 
+
+    while(n){
+        if(n%2 == 0){
+            ans.push_back(0);
+        }
+        else{
+            ans.push_back(1);
+        }
+        n = n/2;
+    }
+    reverse(ans.begin(), ans.end());
+    return ans;
+}
+
+vector<int> CountBits(int n ){
+    vector<int> ans; 
+    vector<int> Vec_Bin;
+    
+    for(int i = 0 ; i<=n ; i++){
+        Vec_Bin = Dec_To_Bin(i);
+        int cnt = 0;
+        for(int i = 0 ; i<Vec_Bin.size() ; i++){
+            if(Vec_Bin.at(i) == 1) cnt++;
+        }
+        ans.push_back(cnt);
+    }
+    return ans;
 }
 
 int main()
@@ -63,6 +94,10 @@ int main()
     vector<int>  res = countBits(5);
     print(res);
     cout << "Brute Force " << endl;
+
+
+    vector <int> vec = CountBits(5);
+    print(vec);
 
     return 0;
 }
