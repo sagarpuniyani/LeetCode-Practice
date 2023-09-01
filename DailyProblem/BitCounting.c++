@@ -30,6 +30,15 @@ Constraints:
 
 0 <= n <= 105*/
 
+
+void print(vector <int> arr){
+    for(int i = 0 ; i < arr.size() ; i++){
+        cout <<"  " << *(arr.data() + i);
+    }
+    cout << endl;
+}
+
+// biltin method 
 vector<int> countBits(int n) {
     vector <int> ans ;
     for (int i = 0 ; i <= n ; i++){
@@ -38,8 +47,17 @@ vector<int> countBits(int n) {
     return ans;
 }
 
+
+// 1. Brute Force 
+
+
 int main()
 {
+
+    vector<int>  res = countBits(5);
+    print(res);
+    cout << "Brute Force " << endl;
+
     
     return 0;
 }
