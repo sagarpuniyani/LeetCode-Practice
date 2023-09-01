@@ -49,7 +49,13 @@ vector<int> countBits(int n) {
 
 
 // 1. Brute Force 
+vector<int> CountBits(int n ){
+    vector <int> ans(n+1);
+    for(int i = 0 ; i <= n ; i++ ){
+        
+    }
 
+}
 
 int main()
 {
@@ -58,6 +64,5 @@ int main()
     print(res);
     cout << "Brute Force " << endl;
 
-    
     return 0;
 }
