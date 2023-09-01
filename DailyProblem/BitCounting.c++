@@ -88,6 +88,27 @@ vector<int> CountBits(int n ){
     return ans;
 }
 
+/*
+2. Optimal Approach 
+*/
+
+vector<int> counting_Bits(int n) {
+    vector<int> ans(n+1);
+    ans[0] = 0 ;
+    for (int i = 0 ; i <= n ; i++){
+        if(i % 2 == 0 ){
+            ans[i] = ans[i/2];
+        }
+        else{
+            ans[i] = ans[i/2] + 1;
+        }
+    }
+    return ans;
+}
+
+
+
+/*Optimal Code of the Bit Count */
 int main()
 {
 
@@ -96,7 +117,7 @@ int main()
     cout << "Brute Force " << endl;
 
 
-    vector <int> vec = CountBits(5);
+    vector <int> vec = counting_Bits(5);
     print(vec);
 
     return 0;
