@@ -19,6 +19,19 @@ int fib(int n , vector<int>  &dp) {
 
 }
 
+// Bottom-up Approach { Tabulation }
+
+int fibonacci(int n , vector<int> &dp){
+    cout << " Calling " << endl;
+    // base case 
+    dp[0] = 0;
+    dp[1] = 1;
+
+    for (int i=2 ; i<=n ; i++){
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    return dp[n];
+}
 
 int main()
 {
@@ -27,7 +40,7 @@ int main()
     cin >> num;
 
     vector<int> dp(num+1 , -1);
-    int res = fib(num , dp);
+    int res = fibonacci(num , dp);
 
     cout << " fib(" << num << ") = " << res << endl;
     
