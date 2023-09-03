@@ -8,6 +8,8 @@ using namespace std;
 int fib(int n) {
     
     //  Base Case 
+    if ( n == 1 || n == 0) return n;
+
     
 }
 
