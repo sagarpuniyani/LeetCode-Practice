@@ -1,49 +1,44 @@
-/* To Find the Prime NUMber */
-
-#include <iostream>
-#include <vector>
-#include <cmath>
-
+/* To find the prime number */
+#include <bits/stdc++.h>
 using namespace std;
 
-bool isPrime(int n) {
-    if (n <= 1) {
-        return false;
-    } else if (n <= 3) {
-        return true;
-    } else if (n % 2 == 0 || n % 3 == 0) {
-        return false;
+void print(vector <int> arr ){
+    for(int i=0 ; i<= arr.size()-1 ; i++){
+        cout << "  " << arr.at(i) << endl;
     }
-    int i = 5;
-    while (i * i <= n) {
-        if (n % i == 0 || n % (i + 2) == 0) {
-            return false;
-        }
-        i += 6;
-    }
-    return true;
+    cout<<endl;
 }
 
-vector<int> findPrimesInRange(int start, int end) {
-    vector<int> primes;
-    for (int num = max(start, 2); num <= end; ++num) {
-        if (isPrime(num)) {
-            primes.push_back(num);
+
+bool Isprime(int n){
+    bool prime = true;
+
+    for (int i = 2 ; i*i <= n ; i++){
+        if (n%i == 0){
+            prime = false;
         }
     }
-    return primes;
+    return prime;
 }
 
-int main() {
-    int startRange = 1;
-    int endRange = 100;
-    vector<int> primeList = findPrimesInRange(startRange, endRange);
-
-    cout << "Prime numbers in the range [" << startRange << ", " << endRange << "] are:" << endl;
-    for (int prime : primeList) {
-        cout << prime << " " << endl;
+vector <int> primeList(int n ){
+    vector <int> primeNum;
+    for( int i = 2 ; i < n ; i++){
+        if (Isprime(i)){
+            primeNum.push_back(i);
+        }
     }
-    cout << endl;
+    return primeNum;
+}
 
+
+int main()
+{
+    bool res = Isprime(15);
+    cout << "Is prime " << res << endl;
+
+    vector <int> result = primeList(100);
+    print(result);
+    
     return 0;
 }
