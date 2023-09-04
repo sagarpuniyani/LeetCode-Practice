@@ -33,6 +33,32 @@ int fibonacci(int n , vector<int> &dp){
     return dp[n];
 }
 
+
+// space optimization 
+int FibNum(int n ){
+
+    // base case 
+    if( n <= 1){
+        return n;
+    }
+
+
+    int prev1 = 0;
+    int prev2 = 1;
+    int curr ;
+
+    for (int i=2 ; i<=n ; i++){
+        curr = prev1 + prev2;
+
+        // shift logic 
+        prev1 = prev2;
+        prev2 = curr;
+    }
+
+    return prev2 ;
+
+}
+
 int main()
 {
     int num;
@@ -40,7 +66,7 @@ int main()
     cin >> num;
 
     vector<int> dp(num+1 , -1);
-    int res = fibonacci(num , dp);
+    int res = FibNum(num);
 
     cout << " fib(" << num << ") = " << res << endl;
     
