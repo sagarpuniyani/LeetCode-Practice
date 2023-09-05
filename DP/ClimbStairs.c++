@@ -38,9 +38,28 @@ int climbingStairs(int nstairs , int n ){
     return (climbingStairs(nstairs , n+1) + climbingStairs(nstairs  , n+2));
 }
 
+// Dp solution 
+int climbingStairsDP(vector <int> &dp ,int nstairs ,  int n  ){
+    // Base Case 
+    if( n == nstairs ) return 1;
+    
+
+}
+
+
+
 int climbStairs(int n) {
     int ans = climbingStairs(n , 0 );
     return  ans;
+}
+
+int climbStairsDP(int n ){
+    vector <int> dp(n+1 , -1);
+    dp[0] = 0;
+    dp[1] = 1;
+
+    // Calling the ways Counting Function 
+    int ans = climbingStairs(dp , n , 0 );
 }
 
 int main()
