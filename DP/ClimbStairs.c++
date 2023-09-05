@@ -39,17 +39,20 @@ int climbingStairs(int nstairs , int n ){
 }
 
 // Dp solution 
-int climbingStairsDP(vector <int> &dp ,int nstairs ,  int n  ){
+int climbingStairsDP(vector <int> &dp , int nstairs ,  int n  ){
+    cout << "Calling DP "<< nstairs << " , " << n << endl;
     // Base Case 
     if( n == nstairs ) return 1;
 
     if ( n > nstairs ) return 0;
+    
 
     // Cache store in DP 
-    if ( dp[n] != -1 ) return dp[n];
-
     // recursive Call 
 
+    dp[n] = (dp[n] != -1) ? climbingStairsDP(dp , nstairs , n+1) + climbingStairsDP(dp , nstairs  , n+2) : -1;
+
+    return dp[n];
 
 }
 
@@ -62,17 +65,19 @@ int climbStairs(int n) {
 
 int climbStairsDP(int n ){
     vector <int> dp(n+1 , -1);
-    dp[0] = 0;
+    dp[0] = 1;
     dp[1] = 1;
-
     // Calling the ways Counting Function 
-    int ans = climbingStairs(dp , n , 0 );
+    int ans = climbingStairsDP(dp , n , 0 );
+    return  ans;
 }
 
 int main()
 {
-    int res = climbStairs(3);
+    int res = climbStairs(2);
+    int res1 = climbStairsDP(3);
     cout << "No. of ways to climb the stairs : " << res << endl;
+    cout << "No. of ways to climb the stairs DP  : " << res1 << endl;
     
     return 0;
 }
