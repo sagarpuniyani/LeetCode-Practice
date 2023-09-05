@@ -28,9 +28,11 @@ Constraints:
 
 
 int climbingStairs(int nstairs , int n ){
-    cout << " Calling " << endl;
+    cout << " Calling " << nstairs << " , " << n << endl;
     // base case 
     if ( n == nstairs) return 1;
+
+    if ( n > nstairs ) return 0;
 
     // recursive Call
     return (climbingStairs(nstairs , n+1) + climbingStairs(nstairs  , n+2));
