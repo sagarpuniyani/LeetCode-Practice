@@ -42,7 +42,14 @@ int climbingStairs(int nstairs , int n ){
 int climbingStairsDP(vector <int> &dp ,int nstairs ,  int n  ){
     // Base Case 
     if( n == nstairs ) return 1;
-    
+
+    if ( n > nstairs ) return 0;
+
+    // Cache store in DP 
+    if ( dp[n] != -1 ) return dp[n];
+
+    // recursive Call 
+
 
 }
 
