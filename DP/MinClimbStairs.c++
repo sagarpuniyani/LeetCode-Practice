@@ -28,19 +28,20 @@ Constraints:
 0 <= cost[i] <= 999*/
 
 int solve ( vector<int> &cost , int n ){
-
+    // base case 
 }
 
 int minCostClimbingStairs(vector<int>& cost) {
     int n = cost.size();
+    cout << " N = " << endl;
     
-    int res = min ( solve(cost , n-1 )  , solve(cost , n-1 ) );
+    int res = min ( solve(cost , n-1 )  , solve(cost , n-2 ) );
     return res;
 }
 
 int main()
 {
-    vector<int> cost = {1,100,1,1,1,100,1,1,100,1};
+    vector<int> cost = {10,15,20};
 
     
     return 0;
