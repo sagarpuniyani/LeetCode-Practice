@@ -48,34 +48,40 @@ int climbingStairsDP(vector <int> &dp , int nstairs ,  int n  ){
     
 
     // Cache store in DP 
+    if (dp[n] != -1 ) return dp[n];
     // recursive Call 
 
-    dp[n] = (dp[n] != -1) ? climbingStairsDP(dp , nstairs , n+1) + climbingStairsDP(dp , nstairs  , n+2) : -1;
+    dp[n] =  climbingStairsDP(dp , nstairs , n+1) + climbingStairsDP(dp , nstairs  , n+2);
 
     return dp[n];
 
 }
 
 
-
+// 1 Brute Approach T.c. = O(N^2) and  S. C. = O(N)
 int climbStairs(int n) {
     int ans = climbingStairs(n , 0 );
     return  ans;
 }
 
+
+// 2. Recursion + memorization  T.C. = O(N) and S. C. = O(N + N)
 int climbStairsDP(int n ){
-    vector <int> dp(n+1 , -1);
-    dp[0] = 1;
-    dp[1] = 1;
+    vector <int> dp(n , -1);
+    dp[n-1] = 1;
+
+
     // Calling the ways Counting Function 
     int ans = climbingStairsDP(dp , n , 0 );
     return  ans;
 }
 
+// 3. Spaace optimization  T.C. = O(N) and S.c. = O(1)
+
 int main()
 {
-    int res = climbStairs(2);
-    int res1 = climbStairsDP(3);
+    int res = climbStairs(10);
+    int res1 = climbStairsDP(44);
     cout << "No. of ways to climb the stairs : " << res << endl;
     cout << "No. of ways to climb the stairs DP  : " << res1 << endl;
     
