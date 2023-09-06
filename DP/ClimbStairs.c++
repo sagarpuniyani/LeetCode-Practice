@@ -76,14 +76,31 @@ int climbStairsDP(int n ){
     return  ans;
 }
 
-// 3. Spaace optimization  T.C. = O(N) and S.c. = O(1)
+
+
+// 3. Spaace optimization with Tabulation  T.C. = O(N) and S.c. = O(N)
+int climbStairsDPTab(int n){
+    vector<int> dp(n , -1);
+    dp[0] = 1;
+    dp[1] = 2;
+
+     // base case 
+    if (  n == 1 || n == 2 ) return dp[n-1];
+
+    for ( int i = 2 ; i <= n-1 ; i++){
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    return dp[n-1];
+}
 
 int main()
 {
     int res = climbStairs(10);
-    int res1 = climbStairsDP(44);
+    int res1 = climbStairsDP(1);
+    int res2 = climbStairsDPTab(44);
     cout << "No. of ways to climb the stairs : " << res << endl;
     cout << "No. of ways to climb the stairs DP  : " << res1 << endl;
+    cout << "No. of ways to climb the stairs DP  : " << res2 << endl;
     
     return 0;
 }
