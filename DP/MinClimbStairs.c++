@@ -29,11 +29,14 @@ Constraints:
 
 int solve ( vector<int> &cost , int n ){
     // base case 
+    if ( n ==  0 || n == 1  ) return cost[n];
+
+    return min(solve(cost , n-1) , solve(cost , n-2)) + cost[n];
 }
 
 int minCostClimbingStairs(vector<int>& cost) {
     int n = cost.size();
-    cout << " N = " << endl;
+    cout << " N = " << n << endl;
     
     int res = min ( solve(cost , n-1 )  , solve(cost , n-2 ) );
     return res;
@@ -42,7 +45,8 @@ int minCostClimbingStairs(vector<int>& cost) {
 int main()
 {
     vector<int> cost = {10,15,20};
-
+    int res = minCostClimbingStairs(cost);
+    cout << "Min Cost is : " << res << endl;
     
     return 0;
 }
