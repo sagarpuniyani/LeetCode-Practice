@@ -100,11 +100,12 @@ int minCostClimbingStairsDPTab(vector<int>& cost) {
 
 
 int solveDPTabSP_OPT( vector<int> &cost , int n  ){
+    cout << " Calling for " << n << endl;
         // base case 
     if (n == 0 || n == 1 ) return cost[n];
 
     int prev1 = cost[1];
-    int prev2 = cost[2];
+    int prev2 = cost[0];
     int curr;
 
     for ( int i=2 ; i<=n ; i++){
@@ -122,9 +123,8 @@ int minCostClimbingStairsDPTabSP_OPT(vector<int>& cost) {
 
     int n = cost.size();
     cout << " N = " << n << endl;
-    
-    int res = min ( solveDPTabSP_OPT(cost , n-1 )  ,
-                    solveDPTabSP_OPT(cost ,n-2 ) );
+
+    int res = min ( solveDPTabSP_OPT(cost , n-1 ) , solveDPTabSP_OPT(cost ,n-2 )) ;
     return res;
 }
 
@@ -141,10 +141,10 @@ int main()
     int res1 = minCostClimbingStairsDP(cost);
     cout << "Min Cost is DP: " << res1 << endl;
     
-    int res2 = minCostClimbingStairsDPTab(arr);
+    int res2 = minCostClimbingStairsDPTab(cost);
     cout << "Min Cost is DP tab: " << res2 << endl;
     
-    int res3 = minCostClimbingStairsDPTabSP_OPT(arr);
+    int res3 = minCostClimbingStairsDPTabSP_OPT(cost);
     cout << "Min Cost is DP opt: " << res3 << endl;
 
     return 0;
