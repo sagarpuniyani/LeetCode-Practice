@@ -65,8 +65,33 @@ int Robbery( vector<int> &nums){
     if ( nums.size() == 1) return nums[0];
 
     // Dp In 
-    vector <int> dp(n , 0);
-    
+    vector <int> dp(nums.size());
+    dp[0] = nums[0];
+    dp[1] = max(nums[0] , nums[1] );
+    for ( int i=2 ; i<nums.size() ; i++){
+        dp[i] = max( dp[i-1] , dp[i-2]+nums[i] );
+    }
+    return dp[nums.size()-1];
+}
+
+
+// more space Optimization 
+int Robberying ( vector <int> & nums ){
+    // Base Case 
+    if ( nums.size() == 0) return 0;
+    if ( nums.size() == 1) return nums[0];
+
+    int prev2 = nums[0];
+    int prev1 = max(nums[0] , nums[1]);
+    int curr;
+
+    for ( int i=2 ; i<nums.size() ; i++){
+        curr = max ( prev1 , prev2 + nums[i]);
+        prev2 = prev1;
+        prev1 = curr;
+    }
+
+    return prev1;
 }
 
 
@@ -74,9 +99,12 @@ int main()
 {
     vector <int> arr = {183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211};
     vector<int> arr2 = {2,7,9,3,1};
-    int res = rob(arr2);
+    int res = rob(arr);
     int res1 = Robbery(arr);
+    int res2 = Robbery(arr);
     cout << "Max Rob is : " <<  res << endl;
+    cout << "Max Robery is : " <<  res1 << endl;
+    cout << "Max Roberying  is : " <<  res2 << endl;
 
     
     return 0;
