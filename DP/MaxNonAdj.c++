@@ -26,30 +26,45 @@ Constraints:
 
 //  top-Down Approach 
 
-int solve (vector<int> &nums , int n , int sum ){
-    cout<< " Calling for " << "(" << n << "," << sum << ")" << endl;
+int solve (vector<int> &nums , int n , vector<int> &dp ){
+    cout<< " Calling for " << "(" << n << "," << dp[n] << ")" << endl;
 
     // Base Case 
-    if ( n >= nums.size() ) return sum;
+    if ( n >= nums.size() ) return 0;
+
+    // Dp has element 
+    if (dp[n] != 0 ) return dp[n];
 
     // include and exculde 
-    int include = nums[n] + solve(nums , n+2 , sum );
-    int exculde = solve(nums , n+1 , sum );
-    sum = max ( include , exculde);
-    cout << sum << endl;
-    return sum;
+    int include = nums[n] + solve(nums , n+2 , dp );
+    int exculde = solve(nums , n+1 , dp );
+    dp[n] = max ( include , exculde);
+    cout << dp[n] << endl;
+    return  dp[n];
 }
 
 
 int rob(vector<int>& nums) {
     int n = nums.size();
-    int ans = solve(nums , 0 , 0 );
+    vector <int> dp(n , 0);
+    int ans = solve(nums , 0 , dp);
     return ans;
 }
 
+
+// Tabulazation 
+
+int Robbery ( vector<int> &nums){
+    
+}
+
+
+
+
+
 int main()
 {
-    vector <int> arr = {2};
+    vector <int> arr = {183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211};
     int res = rob(arr);
     cout << "Max Rob is : " <<  res << endl;
     
