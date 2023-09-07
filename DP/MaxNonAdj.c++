@@ -32,7 +32,7 @@ int solve (vector<int> &nums , int n , int sum ){
     // Base Case 
     if ( n >= nums.size() ) return sum;
 
-    // include 
+    // include and exculde 
     int include = nums[n] + solve(nums , n+2 , sum );
     int exculde = solve(nums , n+1 , sum );
     sum = max ( include , exculde);
@@ -49,7 +49,7 @@ int rob(vector<int>& nums) {
 
 int main()
 {
-    vector <int> arr = {2,7,9,3,1};
+    vector <int> arr = {2};
     int res = rob(arr);
     cout << "Max Rob is : " <<  res << endl;
     
