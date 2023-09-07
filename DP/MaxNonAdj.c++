@@ -27,8 +27,6 @@ Constraints:
 //  top-Down Approach 
 
 int solve (vector<int> &nums , int n , vector<int> &dp ){
-    cout<< " Calling for " << "(" << n << "," << dp[n] << ")" << endl;
-
     // Base Case 
     if ( n >= nums.size() ) return 0;
 
@@ -39,7 +37,6 @@ int solve (vector<int> &nums , int n , vector<int> &dp ){
     int include = nums[n] + solve(nums , n+2 , dp );
     int exculde = solve(nums , n+1 , dp );
     dp[n] = max ( include , exculde);
-    cout << dp[n] << endl;
     return  dp[n];
 }
 
@@ -54,19 +51,25 @@ int rob(vector<int>& nums) {
 
 // Tabulazation 
 
-int Robbery ( vector<int> &nums){
-    
+int solveTab(vector<int> &nums , int n , vector<int> &dp ){
+    cout<< " Calling for " << "(" << n << "," << dp[n] << ")" << endl;
 }
 
-
-
+int Robbery( vector<int> &nums){
+    int n = nums.size();
+    vector <int> dp(n , 0);
+    int ans = solveTab(nums , 0 , dp);
+    return ans;
+}
 
 
 int main()
 {
     vector <int> arr = {183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211};
     int res = rob(arr);
+
     cout << "Max Rob is : " <<  res << endl;
+
     
     return 0;
 }
