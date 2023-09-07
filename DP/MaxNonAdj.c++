@@ -16,7 +16,6 @@ Input: nums = [2,7,9,3,1]
 Output: 12
 Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
 Total amount you can rob = 2 + 9 + 1 = 12.
- 
 
 Constraints:
 
@@ -26,14 +25,33 @@ Constraints:
 
 
 //  top-Down Approach 
+
+int solve (vector<int> &nums , int n , int sum ){
+    cout<< " Calling for " << "(" << n << "," << sum << ")" << endl;
+
+    // Base Case 
+    if ( n >= nums.size() ) return sum;
+
+    // include 
+    int include = nums[n] + solve(nums , n+2 , sum );
+    int exculde = solve(nums , n+1 , sum );
+    sum = max ( include , exculde);
+    cout << sum << endl;
+    return sum;
+}
+
+
 int rob(vector<int>& nums) {
-    
+    int n = nums.size();
+    int ans = solve(nums , 0 , 0 );
+    return ans;
 }
 
 int main()
 {
     vector <int> arr = {2,7,9,3,1};
-    
+    int res = rob(arr);
+    cout << "Max Rob is : " <<  res << endl;
     
     return 0;
 }
