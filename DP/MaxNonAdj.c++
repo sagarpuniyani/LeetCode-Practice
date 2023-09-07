@@ -23,6 +23,13 @@ Constraints:
 0 <= nums[i] <= 400
 */
 
+void print(vector<int> arr ) {
+    for( auto i=0 ; i<arr.size() ; i++){
+        cout << "  " << arr.at(i) ;
+    }
+    cout << endl;
+}
+
 
 //  top-Down Approach 
 
@@ -45,6 +52,7 @@ int rob(vector<int>& nums) {
     int n = nums.size();
     vector <int> dp(n , 0);
     int ans = solve(nums , 0 , dp);
+    print(dp);
     return ans;
 }
 
@@ -66,8 +74,9 @@ int Robbery( vector<int> &nums){
 int main()
 {
     vector <int> arr = {183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211};
-    int res = rob(arr);
-
+    vector<int> arr2 = {2,7,9,3,1};
+    int res = rob(arr2);
+    int res1 = Robbery(arr);
     cout << "Max Rob is : " <<  res << endl;
 
     
