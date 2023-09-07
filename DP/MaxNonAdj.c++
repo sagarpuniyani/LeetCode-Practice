@@ -94,14 +94,18 @@ int Robberying ( vector <int> & nums ){
     return prev1;
 }
 
+// House Robbery II 
+//  the house are arranged in the circular array 
+
+
 
 int main()
 {
     vector <int> arr = {183,219,57,193,94,233,202,154,65,240,97,234,100,249,186,66,90,238,168,128,177,235,50,81,185,165,217,207,88,80,112,78,135,62,228,247,211};
-    vector<int> arr2 = {2,7,9,3,1};
+    vector<int> arr2 = {2,3,2};
     int res = rob(arr);
-    int res1 = Robbery(arr);
-    int res2 = Robbery(arr);
+    int res1 = Robbery(arr2);
+    int res2 = Robbery(arr2);
     cout << "Max Rob is : " <<  res << endl;
     cout << "Max Robery is : " <<  res1 << endl;
     cout << "Max Roberying  is : " <<  res2 << endl;
