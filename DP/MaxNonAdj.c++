@@ -57,17 +57,16 @@ int rob(vector<int>& nums) {
 }
 
 
-// Tabulazation 
-
-int solveTab(vector<int> &nums , int n , vector<int> &dp ){
-    cout<< " Calling for " << "(" << n << "," << dp[n] << ")" << endl;
-}
+// Tabulazation
 
 int Robbery( vector<int> &nums){
-    int n = nums.size();
+    // Base Case 
+    if ( nums.size() == 0) return 0;
+    if ( nums.size() == 1) return nums[0];
+
+    // Dp In 
     vector <int> dp(n , 0);
-    int ans = solveTab(nums , 0 , dp);
-    return ans;
+    
 }
 
 
