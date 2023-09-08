@@ -26,28 +26,53 @@ void print(vector <int> arr ){
 
 void printpascal( vector <vector <int>> arr ){
     for (auto element  : arr ){
-        print(element) ;
+        print(element);
     }
     cout << endl;
 }
 
 
-void pascal( vector <vector <int>> &arr){
-    int n = arr.size();
+void pascal( vector <vector <int>> &arr , int num  ){
+    // Base Case 
+    if ( num < 0 ) return;
+
+
+    // initail and ending of the pascal is 1
+    arr[num].push_back(1);
+
+    // recursive call 
+    pascal( arr , num-1 );
+
+    if ( num >= 2) {
+    for ( int  i=1 ; i <= num-1 ; i++ ){
+
+        cout << " For Loop " << num  << " , " << i  << endl;
+        int value  = arr[num-1][i-1] + arr[num-1][i];
+        cout << " value = " << arr[num-1][i-1] << " + " << arr[num-1][i] << endl;
+        cout << value << endl;
+        arr[num].push_back(value);
+    }
+    }
+
+    if ( num != 0 )
+    arr[num].push_back(1);
 }
 
 
 vector<vector<int>> generate(int numRows) {
     vector < vector <int>> arr(numRows);
 
+    pascal( arr , numRows-1 );
     return arr;
 
 }
 
 int main()
 {
-    vector<vector <int>> arr = {{1,3,4},{5,6,7},{8,9,7}};
+    vector < vector <int>> arr = generate(30);
+
     printpascal(arr);
+
     
     return 0;
 }
