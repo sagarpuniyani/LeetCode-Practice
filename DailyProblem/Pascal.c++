@@ -45,11 +45,7 @@ void pascal( vector <vector <int>> &arr , int num  ){
 
     if ( num >= 2) {
     for ( int  i=1 ; i <= num-1 ; i++ ){
-
-        cout << " For Loop " << num  << " , " << i  << endl;
         int value  = arr[num-1][i-1] + arr[num-1][i];
-        cout << " value = " << arr[num-1][i-1] << " + " << arr[num-1][i] << endl;
-        cout << value << endl;
         arr[num].push_back(value);
     }
     }
@@ -59,7 +55,7 @@ void pascal( vector <vector <int>> &arr , int num  ){
 }
 
 
-vector<vector<int>> generate(int numRows) {
+vector<vector<int>> generate(int numRows ) {
     vector < vector <int>> arr(numRows);
 
     pascal( arr , numRows-1 );
@@ -67,10 +63,19 @@ vector<vector<int>> generate(int numRows) {
 
 }
 
+vector<int> getRow(int rowIndex) {
+    vector<vector<int>>  arr = generate(rowIndex+1);
+    return arr[rowIndex];
+}
+
 int main()
 {
-    vector < vector <int>> arr = generate(30);
+    vector < vector <int>> arr = generate(10);
 
+    vector <int> array = getRow(14);
+
+    print(array);
+    cout << "=======================================" << endl;
     printpascal(arr);
 
     
