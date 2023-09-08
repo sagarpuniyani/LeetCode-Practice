@@ -17,6 +17,21 @@ Constraints:
 1 <= numRows <= 30
 */
 
+void print(vector <int> arr ){
+    for (auto i : arr ){
+        cout << "  " << i ;
+    }
+    cout << endl;
+}
+
+void printpascal( vector <vector <int>> arr ){
+    for (auto element  : arr ){
+        print(element) ;
+    }
+    cout << endl;
+}
+
+
 void pascal( vector <vector <int>> &arr){
     int n = arr.size();
 }
@@ -25,10 +40,14 @@ void pascal( vector <vector <int>> &arr){
 vector<vector<int>> generate(int numRows) {
     vector < vector <int>> arr(numRows);
 
+    return arr;
+
 }
 
 int main()
 {
+    vector<vector <int>> arr = {{1,3,4},{5,6,7},{8,9,7}};
+    printpascal(arr);
     
     return 0;
 }
