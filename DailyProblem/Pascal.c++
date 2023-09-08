@@ -68,15 +68,16 @@ vector<int> getRow(int rowIndex) {
     return arr[rowIndex];
 }
 
+
 int main()
 {
     vector < vector <int>> arr = generate(10);
+    printpascal(arr);
 
     vector <int> array = getRow(14);
 
+    cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
     print(array);
-    cout << "=======================================" << endl;
-    printpascal(arr);
 
     
     return 0;
