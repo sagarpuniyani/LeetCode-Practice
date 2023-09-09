@@ -38,7 +38,7 @@ vector<int> solve( vector<int> nums , int size){
         cout << "Value " << value << endl;
         arr.push_back(value);
     }
-    cout << "===========" << endl;
+    cout << "=============" << endl;
     print (arr);
 
     // recursive Call 
