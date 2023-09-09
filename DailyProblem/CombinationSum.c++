@@ -47,10 +47,36 @@ int solve ( vector<int>& nums, int target , vector <int> & dp ){
     return dp[target] ;
 }
 
-
 int combinationSum4(vector<int>& nums, int target) {
     vector <int> dp (target+1 , -1 );
     return solve( nums , target ,dp  );
+}
+
+
+int solveTab ( vector<int>& nums, int target , vector <int> & dp ){
+
+
+    int ans =0  ;
+    for ( int i=0 ; i<nums.size() ; i++){
+
+        ans += solve(nums , target-nums[i] , dp);
+    }
+
+    dp[target] = ans;
+    return dp[target] ;
+}
+
+int combinationSum4Tab (vector<int>& nums, int target) {
+    vector <int> dp (target+1 , 0 );
+    dp[0] = 1;
+
+    for ( int i=1 ; i<= target ; i++){
+        for ( int j=0 ; j<nums.size() ; j++){
+            if ( i-nums[j] >= 0 )
+            dp[i] += dp[i-nums[j]];
+        }
+    }
+    return dp[target];
 }
 
 int main()
@@ -58,6 +84,8 @@ int main()
     vector<int> arr = {1,2,3};
     int res = combinationSum4(arr , 32 );
     cout << " Res = " << res << endl;
+    int res1 = combinationSum4Tab(arr , 32 );
+    cout << " ResTab  = " << res1 << endl;
     
     return 0;
 }
