@@ -1,5 +1,5 @@
 # compiled executable in windows 
-*.exe
+**/*.exe
 *.out
 
 #  list of tasks or to-do items. 
