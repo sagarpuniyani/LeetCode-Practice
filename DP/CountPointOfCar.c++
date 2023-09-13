@@ -35,8 +35,6 @@ void solve( deque<int> &dp ,  vector<int> &num ){
         for ( int i=num[0] ; i<=num[num.size()-1] ; i++){
             dp.push_back(i);
         }
-        cout << "dp = ";
-        print(dp);
     }
     if ( dp.size() != 0 ){
         // traversing in any kind of num 
@@ -61,12 +59,14 @@ void solve( deque<int> &dp ,  vector<int> &num ){
 }
 
 int numberOfPoints(vector<vector<int>>& nums) {
-    deque <int> dp(2000 , -1);
+    deque <int> dp;
 
     // traversing the outer vector 
     for (int i=0 ; i<nums.size() ; i++){
         solve(dp , nums[i]);
     }
+    cout << "dp = " ;
+    print(dp);
 
     return dp.size();
 }

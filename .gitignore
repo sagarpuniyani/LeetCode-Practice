@@ -1,0 +1,9 @@
+# compiled executable in windows 
+*.exe
+*.out
+
+#  list of tasks or to-do items. 
+todo.txt
+
+# lexical analyzer generator
+lex.yy.c
