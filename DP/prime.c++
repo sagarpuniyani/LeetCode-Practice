@@ -9,7 +9,7 @@ void print(vector <int> arr ){
     cout<<endl;
 }
 
-
+// To check the wheather the number is prime or not 
 bool Isprime(int n){
     bool prime = true;
 

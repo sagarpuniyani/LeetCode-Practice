@@ -1,0 +1,3 @@
+#  All the executable files 
+**/*.exe
+**/*.out
