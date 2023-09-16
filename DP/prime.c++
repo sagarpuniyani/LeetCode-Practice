@@ -39,6 +39,8 @@ int main()
 
     vector <int> result = primeList(100);
     print(result);
+
+    cout  << endl;
     
     return 0;
 }
