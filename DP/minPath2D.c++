@@ -1,3 +1,6 @@
+
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     int minimumEffortPath(vector<vector<int>>& heights) {
@@ -31,3 +34,9 @@ public:
         return -1;
     }
 };
+
+int main()
+{
+    
+    return 0;
+}
