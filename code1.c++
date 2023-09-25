@@ -44,23 +44,6 @@ Node* addend(Node* head  , Node* t){
 
 int main()
 {
-    // int num = 5 ;
-    // cout << num << endl;
-    // cout << &num << endl;
-    // int *ptr = &num;
-    // cout<< ptr << endl;
-
-    // int * const ptr2 = &num;
-    // cout << ptr2 << endl;
-
-    // int arr[10];
-    // cout << "address of array "<<arr << endl;
-    // cout << "address of array "<<&arr[0] << endl;
-
-    // cout<< "Address by the function :"<<endl;
-    // func(arr[0]);
-
-
     Node* a = new Node(1);
     Node* b = new Node(2);
     Node* c = new Node(3);
