@@ -41,6 +41,16 @@ string reverseStr(string s, int k) {
     return s;
 }
 
+
+string reverseStr1(string s , int k ){
+    int i=0;
+    while ( i < s.size()){
+        reverse(s.begin()+i , s.begin()+i+k > s.end() ? s.end() :s.begin()+i+k );
+        i += 2*k;
+    }
+    return s;
+}
+
 int main()
 {
 
@@ -49,7 +59,7 @@ int main()
     cout << " res = " << res << endl;
     
     string str = "abcd";
-    string res2 = reverseStr(str , 2 );
+    string res2 = reverseStr1(str , 4 );
     cout << " str = " << str << endl;
     cout << " res2 = " << res2 << endl;
     
