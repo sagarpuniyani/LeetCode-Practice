@@ -34,6 +34,7 @@ node* BuildTree(node* root){
 
 int main()
 {
+    cout << "Simple Construction of the Tree " << endl;
     node* N = NULL;
     N = BuildTree(N);
     
