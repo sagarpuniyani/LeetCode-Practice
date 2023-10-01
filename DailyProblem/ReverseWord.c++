@@ -27,13 +27,15 @@ string reverseWords(string s) {
 
 string reverseStr(string s, int k) {
     int i=0;
-    int count = 0;
+    int cnt=0;
     for ( int j=0 ; j<s.size() ; j++){
-        if( count <= (2*k)-1) count++;
-        else {
-            count = 0;
+        cnt++;
+        if ( cnt == k-1 ) {
+            reverse( s.begin()+i , s.begin()+i+k);
+        }
+        if( cnt == (2*k)-1 || i+cnt == s.size()){
+            cnt=0;
             i = j+1;
-            
         }
     }
     return s;
@@ -46,10 +48,8 @@ int main()
     string res = reverseWords(s);
     cout << " res = " << res << endl;
     
-    string str = "abcdefg";
+    string str = "abcd";
     string res2 = reverseStr(str , 2 );
-    reverse(str.begin() , str.begin()+2);
-    cout << "begin " << str.begin() << endl;
     cout << " str = " << str << endl;
     cout << " res2 = " << res2 << endl;
     
