@@ -27,7 +27,15 @@ string reverseWords(string s) {
 
 string reverseStr(string s, int k) {
     int i=0;
-    
+    int count = 0;
+    for ( int j=0 ; j<s.size() ; j++){
+        if( count <= (2*k)-1) count++;
+        else {
+            count = 0;
+            i = j+1;
+            
+        }
+    }
     return s;
 }
 
