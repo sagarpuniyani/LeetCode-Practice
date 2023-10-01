@@ -26,7 +26,9 @@ string reverseWords(string s) {
 }
 
 string reverseStr(string s, int k) {
+    int i=0;
     
+    return s;
 }
 
 int main()
@@ -36,7 +38,12 @@ int main()
     string res = reverseWords(s);
     cout << " res = " << res << endl;
     
-    
+    string str = "abcdefg";
+    string res2 = reverseStr(str , 2 );
+    reverse(str.begin() , str.begin()+2);
+    cout << "begin " << str.begin() << endl;
+    cout << " str = " << str << endl;
+    cout << " res2 = " << res2 << endl;
     
     return 0;
 }
