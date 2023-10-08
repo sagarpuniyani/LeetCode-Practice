@@ -1,12 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 class node{
     public:
         int data;
         node* left;
         node* right;
-    
+    /*This key word is use for the self reference poniter */
     node(int d ){
         this->data = d;
         this->left = NULL;
@@ -30,6 +29,7 @@ node* BuildTree(node* root){
 
     return root;
 
+// this is return some data 
 }
 
 int main()
