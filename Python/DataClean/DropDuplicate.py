@@ -27,3 +27,20 @@ def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
     }
 
     return students.rename(column = renaming )
+
+
+#  Changing the Data type
+def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+    students["grade"] = students["grade"].astype(int)
+    return students 
+
+# Placing zero where values are missing 
+
+def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
+    products['quantity'] = products['quantity'].fillna(0)
+    return products  
+
+# concatenation of dataset vertically 
+def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+    result = pd.concat([df1, df2], axis=0) 
+    return result
