@@ -18,6 +18,9 @@ int main()
 {   
     char argument[] = "argument1";
     function(2, argument);
+
+    char x = 134522847566309;
+    printf("%d\n" , x );
     
     return 0;
 }
